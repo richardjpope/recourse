@@ -1,0 +1,17 @@
+{
+  "name": "recourse",
+  "version": "0.0.0",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^3.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^1.2.1"
+  },
+  "dependencies": {
+    "bower": "^1.8.8",
+    "govuk-frontend": "^3.4.0"
+  }
+}

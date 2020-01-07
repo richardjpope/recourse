@@ -1,0 +1,56 @@
+{% macro render_field(field) %}
+  {% if field.errors %}
+    {{ field.label(class_="is-invalid-label") }}
+    {{ field(class_="error", **kwargs) }}
+    <span class="form-error is-visible">
+      {% for error in field.errors %}
+        {{error}}
+      {% endfor %}
+    </span>
+  {% else %}
+    {{ field.label() }}
+    {{ field() }}
+  {% endif %}
+{% endmacro %}
+
+{% macro render_checkbox(field) %}
+  {% if field.errors %}
+    {{ field(class_="is-invalid-label", **kwargs) }}
+    {{ field.label(class_="is-invalid-label", **kwargs) }}
+    <span class="form-error is-visible">
+      {% for error in field.errors %}
+        {{error}}
+      {% endfor %}
+    </span>
+  {% else %}
+    {{ field() }}
+    {{ field.label() }}
+  {% endif %}
+{% endmacro %}
+
+{% macro render_radio(field) %}
+  {% if field.errors %}
+      {{ field.label(class_="is-invalid-label", **kwargs) }}
+      <ul>
+      {% for subfield in field %}
+        <li>
+          {{ subfield(class_="is-invalid-input", **kwargs) }} {{ subfield.label(class_="is-invalid-label", **kwargs) }}
+        </li>
+      {% endfor %}
+    </ul>
+    <span class="form-error is-visible">
+      {% for error in field.errors %}
+        {{error}}
+      {% endfor %}
+    </span>    
+  {% else %}
+    {{ field.label() }}
+    <ul>
+      {% for subfield in field %}
+        <li>
+          {{ subfield }} {{ subfield.label }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}
