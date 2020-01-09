@@ -1,0 +1,51 @@
+{% from "govuk-jinja-components/button/macro.jinja" import govukButton -%}
+{% from "govuk-jinja-components/summary-list/macro.jinja" import govukSummaryList -%}
+{% extends "base.html" %}
+{% block title %}What online service or company where you using?{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Review and submit your information</h1>
+      {{ govukSummaryList({
+        "rows": [{
+                "key": {
+                 "text": "Name"
+                },
+                "value": {
+                  "text": "Sarah Philips"
+                },
+                "actions": {
+                  "items": [{
+                    "href": "#",
+                    "text": "Change",                    
+                    "visuallyHiddenText": "name"
+                  }]
+                }
+              },
+              {
+                "key": {
+                 "text": "Email"
+                },
+                "value": {
+                  "text": "sarah.philips@gmail.com"
+                },
+                "actions": {
+                  "items": [{
+                    "href": "#",
+                    "text": "Change",                    
+                    "visuallyHiddenText": "name"
+                  }]
+                }
+              }]
+          })
+        |safe}}
+
+        <form action="" method="post" autocomplete="off" class="callout primary">
+        <div class="govuk-form-group">
+          {{ form.csrf_token }}
+        </div>
+        {{govukButton({"text": "Confirm and send"})|safe}}
+      </form>
+    </div>
+  </div>
+{% endblock %}

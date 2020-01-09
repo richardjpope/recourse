@@ -1,0 +1,17 @@
+{% from "govuk-jinja-components/button/macro.jinja" import govukButton -%}
+{% extends "base.html" %}
+{% block title %}What would you like to happen?{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">What would you like to happen?</h1>
+      <form action="" method="post" autocomplete="off">
+        <div class="govuk-form-group">
+          {{form.csrf_token}}
+          {{form.description}}
+        </div>
+        {{govukButton({"text": "Save and continue"})|safe}}
+      </form>
+    </div>
+  </div>
+{% endblock %}
