@@ -1,6 +1,8 @@
 bin
 include
 lib
+src
+env
 celerybeat.pid
 .Python
 .sass-cache

@@ -1,6 +1,5 @@
 from flask import Flask, request, redirect, render_template, url_for
 from flask.ext.mongoengine import MongoEngine
-from flaskext.markdown import Markdown
 from mongoengine import NotUniqueError
 from celery import Celery
 import jinja2
@@ -12,8 +11,12 @@ app.config.from_object(os.environ['SETTINGS'])
 #Database
 db = MongoEngine(app)
 
-#Markdown
-Markdown(app)
+#Templates
+multi_loader = jinja2.ChoiceLoader([
+        app.jinja_loader,
+        jinja2.PrefixLoader({'govuk-jinja-components': jinja2.PackageLoader('govuk-jinja-components')})
+    ])
+app.jinja_loader = multi_loader
 
 #Tasks
 celery = Celery('app', broker=app.config['CELERY_BROKER_URL'])
@@ -28,6 +31,6 @@ class ContextTask(TaskBase):
 celery.Task = ContextTask
 
 #Import everything else
-import forms
-import models
-import views
+from recourse import forms
+from recourse import models
+from recourse import views
