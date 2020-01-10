@@ -7,16 +7,47 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">Review and submit your information</h1>
       {{ govukSummaryList({
-        "rows": [{
+        "rows": [
+              {
+                "key": {
+                 "text": "Description of the issue"
+                },
+                "value": {
+                  "text": case.details_description
+                },
+                "actions": {
+                  "items": [{
+                    "href": url_for("details"),
+                    "text": "Change",                    
+                    "visuallyHiddenText": "name"
+                  }]
+                }
+              },
+              {
+                "key": {
+                 "text": "What you would like to happen"
+                },
+                "value": {
+                  "text": case.outcome_description
+                },
+                "actions": {
+                  "items": [{
+                    "href": url_for("outcome"),
+                    "text": "Change",                    
+                    "visuallyHiddenText": "name"
+                  }]
+                }
+              },
+              {
                 "key": {
                  "text": "Name"
                 },
                 "value": {
-                  "text": "Sarah Philips"
+                  "text": case.contact_name
                 },
                 "actions": {
                   "items": [{
-                    "href": "#",
+                    "href": url_for("contact"),
                     "text": "Change",                    
                     "visuallyHiddenText": "name"
                   }]
@@ -27,16 +58,16 @@
                  "text": "Email"
                 },
                 "value": {
-                  "text": "sarah.philips@gmail.com"
+                  "text": case.contact_email
                 },
                 "actions": {
                   "items": [{
-                    "href": "#",
+                    "href": url_for("contact"),
                     "text": "Change",                    
                     "visuallyHiddenText": "name"
                   }]
                 }
-              }]
+              },]
           })
         |safe}}
 
