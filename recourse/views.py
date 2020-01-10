@@ -2,7 +2,6 @@ from flask import request, redirect, render_template, url_for, session, flash
 from recourse import app
 from recourse import forms
 from recourse import models
-from recourse import tasks
 
 @app.route("/", methods=["GET"])
 def index():

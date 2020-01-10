@@ -1,6 +1,5 @@
 from datetime import datetime
 from mongoengine import Document, StringField,EmailField,  IntField, DateTimeField, signals
-from recourse import tasks
 from recourse import app
 
 class Case(Document):
