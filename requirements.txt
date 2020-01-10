@@ -28,5 +28,5 @@ requests==2.9.1
 SecureMongoEngine==0.1.2
 six==1.10.0
 twilio==5.4.0
-Werkzeug==0.11.5
+Werkzeug==0.15.3
 WTForms==2.2.1
