@@ -1,10 +1,18 @@
 {% from "govuk-jinja-components/button/macro.jinja" import govukButton -%}
 {% extends "base.html" %}
 {% block title %}What online service or company where you using?{% endblock %}
+{% block top %}
+<a href="{{url_for("who")}}" class="govuk-back-link">Back</a>
+{% endblock %}
+
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">Your rights</h1>
+      {{case.harm.rights_markdown|markdown}}
+      <h2 class="govuk-heading-l">Additional support</h2>
+      {{case.harm.support_markdown|markdown}}
+      <hr/>
       <form action="" method="post" autocomplete="off" class="callout primary">
         <div class="govuk-form-group">
           {{ form.csrf_token }}

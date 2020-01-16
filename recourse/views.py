@@ -5,7 +5,8 @@ from recourse import models
 
 @app.route("/", methods=["GET"])
 def index():
-    session.clear()
+    if "case" in session:
+        session.pop("case")
     return render_template('index.html')
 
 @app.route("/report/what", methods=["GET", "POST"])
@@ -17,17 +18,45 @@ def what():
 
     case = models.Case.from_json(session["case"])
     form = forms.What(request.form)
+    form.type.choices = [(category.slug, category.name) for category in models.Category.objects().order_by('name')]
 
     if request.method == "GET":
-        form.type.data =  case.type
+        if case.category:
+            form.type.data =  case.category.slug
 
     if request.method == "POST":
         if form.validate():
-            case.type = form.type.data
+            case.category = models.Category.objects.get(slug=form.type.data)
             session["case"] = case.to_json()
-            return redirect(url_for("service"))
+            return redirect(url_for("harm"))
 
     return render_template("what.html", form=form)
+
+@app.route("/report/harm", methods=["GET", "POST"])
+def harm():
+
+    if not "case" in session:
+        return redirect(url_for('index'))
+
+    case = models.Case.from_json(session["case"])
+    form = forms.Harm(request.form)
+    harms = models.Harm.objects(categories=case.category).order_by('title')
+    form.harm.choices = [(harm.slug, harm.title) for harm in harms]
+    for harm in harms:
+        form.harm.hints[harm.slug] = {"text": harm.description}
+
+    if request.method == "GET":
+        if case.harm:
+            form.harm.data = case.harm.slug
+
+    if request.method == "POST":
+        if form.validate():
+            case.harm = models.Harm.objects.get(slug=form.harm.data)
+            session["case"] = case.to_json()
+            print(session["case"])
+            return redirect(url_for("service"))
+
+    return render_template("harm.html", form=form)
 
 @app.route("/report/service", methods=["GET", "POST"])
 def service():
@@ -86,7 +115,7 @@ def rights():
             session["case"] = case.to_json()
             return redirect(url_for("details"))
 
-    return render_template('rights.html', form=form)
+    return render_template('rights.html', form=form, case=case)
 
 @app.route("/report/details", methods=["GET", "POST"])
 def details():
@@ -122,7 +151,7 @@ def outcome():
    
     if request.method == "POST":
         if form.validate():
-            case.details_description = form.description.data
+            case.outcome_description = form.description.data
             session["case"] = case.to_json()
             return redirect(url_for("contact"))
 

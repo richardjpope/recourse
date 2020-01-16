@@ -1,6 +1,10 @@
 {% from "govuk-jinja-components/button/macro.jinja" import govukButton -%}
 {% extends "base.html" %}
 {% block title %}What would you like to happen?{% endblock %}
+{% block top %}
+<a href="{{url_for("details")}}" class="govuk-back-link">Back</a>
+{% endblock %}
+
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">

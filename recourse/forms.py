@@ -112,7 +112,11 @@ class govukFileField(FileField):
 
 
 class What(FlaskForm):
-    type = govukRadioField("What happened?", [validators.Required(message="You need to choose an option")], choices=[("foo", "foo"), ("bar", "bar")])
+    type = govukRadioField("What happened?", [validators.Required(message="You need to choose an option")], choices=[])
+
+class Harm(FlaskForm):
+    harm = govukRadioField("What happened?", [validators.Required(message="You need to choose an option")], choices=[("foo", "foo"), ("bar", "bar")])
+
 
 class Service(FlaskForm):
     service_name = govukTextField("Name of service", [validators.Required(message="Enter the name of a service, app or website")], {"text": "e.g. Facebook or Daily Mail"})

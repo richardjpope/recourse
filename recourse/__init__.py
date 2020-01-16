@@ -1,14 +1,14 @@
 from flask import Flask, request, redirect, render_template, url_for
 from flask.ext.mongoengine import MongoEngine
 from mongoengine import NotUniqueError
+from flaskext.markdown import Markdown
 import jinja2
 import os
 
 app = Flask(__name__)
 app.config.from_object(os.environ['SETTINGS'])
-
-#Database
 db = MongoEngine(app)
+Markdown(app)
 
 #Templates
 multi_loader = jinja2.ChoiceLoader([
