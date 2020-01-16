@@ -43,7 +43,7 @@ def harm():
     harms = models.Harm.objects(categories=case.category).order_by('title')
     form.harm.choices = [(harm.slug, harm.title) for harm in harms]
     for harm in harms:
-        form.harm.hints[harm.slug] = {"text": harm.description}
+        form.harm.option_hints[harm.slug] = {"text": harm.description}
 
     if request.method == "GET":
         if case.harm:
@@ -188,7 +188,6 @@ def review():
     case = models.Case.from_json(session["case"])
     form = forms.Review(request.form)
     if request.method == "POST" and form.validate():
-        session["case"] = None
         return redirect(url_for("confirmation"))
 
     return render_template('review.html', form=form, case=case)
@@ -198,6 +197,7 @@ def confirmation():
     if not "case" in session:
        return redirect(url_for('index'))
 
-    return render_template("confirmation.html")
+    case = models.Case.from_json(session["case"])
+    return render_template("confirmation.html", case=case)
 
 

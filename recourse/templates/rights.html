@@ -1,21 +1,66 @@
 {% from "govuk-jinja-components/button/macro.jinja" import govukButton -%}
 {% extends "base.html" %}
 {% block title %}What online service or company where you using?{% endblock %}
-{% block top %}
-<a href="{{url_for("who")}}" class="govuk-back-link">Back</a>
-{% endblock %}
-
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Your rights</h1>
-      {{case.harm.rights_markdown|markdown}}
+      <h1 class="govuk-heading-xl">
+        Summary 
+      </h1>
+      <p class="govuk-body-l">
+        You are reporting <strong>{{case.harm.title|lower}}</strong> targeted at
+        {%if case.affected_party == "you" %}
+          <strong>you</strong>
+        {% elif case.affected_party == "another"%}
+          <strong>someone else</strong>
+        {% else %}
+          <strong>everybody</strong>
+        {% endif %}
+        on <strong>{{case.service_name}}</strong>.
+        This page describes your legal rights, additional support that is available and options for reporting this issue.
+      </p>
+      <h2 class="govuk-heading-l">Your rights</h2>
+      <div class="govuk-body">
+        {{case.harm.rights_markdown|markdown}}
+      </div>
       <h2 class="govuk-heading-l">Additional support</h2>
-      {{case.harm.support_markdown|markdown}}
-      <hr/>
+      <div class="govuk-body">
+        {{case.harm.support_markdown|markdown}}
+      </div>
       <form action="" method="post" autocomplete="off" class="callout primary">
+      <h2 class="govuk-heading-l">Your options</h2>
         <div class="govuk-form-group">
           {{ form.csrf_token }}
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+              <legend class="govuk-fieldset__legend">
+                What would you like to do next?
+              </legend>
+              <span id="nationality-hint" class="govuk-hint">
+                You can select more than one option, but will only have to enter your information once
+              </span>
+              <div class="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british">
+                  <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                    Just record this incident (no further steps)
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="nationality-2" name="nationality" type="checkbox" value="irish">
+                  <label class="govuk-label govuk-checkboxes__label" for="nationality-2">
+                    Report this to {{case.service_name}} (additional steps, normally takes 3 weeks to get a response)
+                  </label>                                                                    </div>
+                 <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="nationality-3" name="nationality" type="checkbox" value="other">
+                  <label class="govuk-label govuk-checkboxes__label" for="nationality-3">
+                    Report this to Childline (additional steps, you may not get a response, but they will use the information spot patterns)
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
         </div>
         {{govukButton({"text": "Save and continue"})|safe}}
       </form>

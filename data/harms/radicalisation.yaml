@@ -1,0 +1,15 @@
+title: Radicalisation
+description: for example ...
+categories:
+    - How someone behaved online
+    - An app or website
+report to:
+    - company
+    - police
+rights: |
+    This is some **markdown**
+
+support: |
+    * This
+    * Is 
+    * A list with a [link](http://example.org)
