@@ -129,7 +129,7 @@ class Service(FlaskForm):
 
     url = govukTextField("or paste a URL", [])
 
-class Who(Form):
+class Who(FlaskForm):
     affected_party = govukRadioField(
             "Who did it affect?", 
             [validators.Required(message="You need to choose an option")], 
@@ -140,7 +140,7 @@ class Who(Form):
                 "everyone": {"text": "It has not affected a particular person, but is of general concern"}}
             )
 
-class Escalate(Form):
+class Escalate(FlaskForm):
     pass
 
 class Details(FlaskForm):
@@ -155,7 +155,7 @@ class Contact(FlaskForm):
     name = govukTextField("Full name", [validators.Required()])
     email = govukTextField("Email address", [validators.Required(), validators.Email()])
 
-class Review(Form):
+class Review(FlaskForm):
     pass
 
 
