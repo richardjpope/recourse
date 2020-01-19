@@ -31,6 +31,7 @@ def importdata():
         
         #connect to database
         db = connect(app.config['MONGODB_DB'], host=app.config['MONGODB_HOST'],  port=app.config['MONGODB_PORT'])       
+        db = connect(app.config['MONGO_URI'])       
 
         #Get all the yaml files from the directory
         harms_directory ="%s/data/harms/" %  os.path.dirname(os.path.abspath(__file__))
