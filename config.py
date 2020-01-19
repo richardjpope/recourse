@@ -13,7 +13,9 @@ class Config(object):
     MONGODB_PASSWORD = os.environ.get('MONGODB_PASSWORD', None)
     MONGODB_HOST = os.environ.get('MONGO_URI', None)
     SECRET_KEY = os.environ.get('SECRET_KEY', None)
-    
+    BASIC_AUTH_FORCE = os.environ.get('BASIC_AUTH_FORCE', True)
+    BASIC_AUTH_USERNAME = os.environ.get('BASIC_AUTH_USERNAME', None)
+    BASIC_AUTH_PASSWORD = os.environ.get('BASIC_AUTH_PASSWORD', None)
   
 class DevelopmentConfig(Config):
     DEBUG = True
@@ -21,7 +23,7 @@ class DevelopmentConfig(Config):
     MONGODB_HOST = os.environ.get('MONGODB_HOST', 'localhost')
     MONGODB_PORT = int(os.environ.get('MONGODB_PORT', 27017))
     SECRET_KEY = 'not-a-secret-not-a-secret-not-a-secret-not-a-secret-not-a-secret-not-a-secret-not-a-secret-'
-
+    BASIC_AUTH_FORCE = False
 
 class TestingConfig(DevelopmentConfig):
     TESTING = True
@@ -29,3 +31,4 @@ class TestingConfig(DevelopmentConfig):
     MONGODB_HOST = os.environ.get('MONGODB_HOST', 'localhost')
     MONGODB_PORT = int(os.environ.get('MONGODB_PORT', 27017))
     WTF_CSRF_ENABLED = False
+    BASIC_AUTH_FORCE = False

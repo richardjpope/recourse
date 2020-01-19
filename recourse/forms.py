@@ -158,4 +158,3 @@ class Contact(FlaskForm):
 class Review(FlaskForm):
     pass
 
-

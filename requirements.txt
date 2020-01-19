@@ -1,8 +1,7 @@
-amqp==1.4.9
 anyjson==0.3.3
 billiard==3.3.0.23
 blinker==1.4
-Flask==0.10.1
+Flask==1.0
 Flask-Markdown==0.3
 flask-mongoengine==0.7.5
 Flask-Script==2.0.5
@@ -21,9 +20,7 @@ PySocks==1.7.1
 python-slugify==4.0.0
 pytz==2016.3
 PyYAML==5.3
-requests==2.9.1
-SecureMongoEngine==0.1.2
 six==1.10.0
 text-unidecode==1.3
-Werkzeug==0.11.5
+Werkzeug==0.15.3
 WTForms==2.2.1
