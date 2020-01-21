@@ -4276,4 +4276,10 @@
     .govuk-\!-width-one-quarter {
       width: 25% !important; } }
 
+.govuk-header {
+  background: #0e3249; }
+
+.govuk-header__container {
+  border-bottom: none; }
+
 /*# sourceMappingURL=main.css.map */

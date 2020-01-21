@@ -130,6 +130,7 @@ def details():
         form.description.data = case.details_description
 
     if request.method == "POST":
+        
         if form.validate():
             case.details_description = form.description.data
             session["case"] = case.to_json()
