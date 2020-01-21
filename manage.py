@@ -29,7 +29,6 @@ def importdata():
     "Import data from YAML files"
     if prompt_bool("Import YAML files and replace existing data?"):
        
-        print(app.config)
         #connect to database
         #db = connect(app.config['MONGODB_DB'], host=app.config['MONGODB_HOST'],  port=app.config['MONGODB_PORT'])       
         db = connect(app.config['MONGODB_HOST'])       

@@ -1,7 +1,6 @@
 from recourse import app
 from flask_wtf import Form, FlaskForm
-from flask_wtf.file import FileField
-from wtforms import BooleanField, TextField, TextAreaField, RadioField, validators, ValidationError
+from wtforms import BooleanField, TextField, TextAreaField, RadioField, validators, ValidationError, FileField
 from flask import render_template
 
 class govukRadioField(RadioField):

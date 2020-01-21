@@ -4,7 +4,7 @@
 * [Local development](#local-development)
 * [Settings](#settings)
 * [Running tests](#testing)
-* [Resetting the database](resetting-the-database)
+* [Importing data](importing data)
 
 ##Local development
 
@@ -39,20 +39,6 @@ export SETTINGS='config.DevelopmentConfig'
 python server.py
 ```
 
-Run the scheduler (in a separate terminal):
-```
-source bin/activate
-export SETTINGS='config.DevelopmentConfig'
-celery -A recourse.celery beat
-```
-
-Run the message que (in a separate terminal):
-```
-source bin/activate
-export SETTINGS='config.DevelopmentConfig'
-celery -A recourse.celery worker
-```
-
 Run the assets compiler (in a separate terminal):
 
 ```
@@ -69,7 +55,7 @@ export SETTINGS='config.TestingConfig'
 python tests.py
 ```
 
-##Resetting the database
+##Importing data
 ```
-python manage.py reset
+python manage.py importdata
 ```

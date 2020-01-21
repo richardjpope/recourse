@@ -1,5 +1,5 @@
 from flask import Flask, request, redirect, render_template, url_for
-from flask.ext.mongoengine import MongoEngine
+from flask_mongoengine import MongoEngine
 from flask_basicauth import BasicAuth
 from mongoengine import NotUniqueError
 from flaskext.markdown import Markdown
