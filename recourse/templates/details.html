@@ -14,6 +14,19 @@
           {{form.description}}
           {{form.date_occured}}
           {{form.screenshot}}
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                How to take a screenshot
+              </span>
+            </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body windows">Windows: Windows key + PrtScn</p>
+            <p class="govuk-body macos">macOS: Shift + Command + 4</p>
+            <p class="govuk-body android">Android: power button for a few seconds, then tap 'screenshot'</p>
+            <p class="govuk-body ios">iOS: Sleep/wake button + volume up</p>
+          </div>
+          </details> 
         </div>
         {{govukButton({"text": "Save and continue"})|safe}}
       </form>

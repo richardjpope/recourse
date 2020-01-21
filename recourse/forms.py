@@ -144,7 +144,7 @@ class Escalate(FlaskForm):
 
 class Details(FlaskForm):
     description = govukTextAreaField("Describe what happened", [validators.Required()], {"text":"Please give as much information as possible"})
-    screenshot = govukFileField("Upload a screenshot (optional)")
+    screenshot = govukFileField("Upload a screenshot (optional)", {"text": "e.g. of the issue you are reporting"})
     date_occured = govukTextField("When did it happen (optional)", [], {"text":"(e.g. “23/01”, “25 Jan”, or “last Monday”)"})
 
 class Outcome(FlaskForm):
