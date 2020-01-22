@@ -6,26 +6,17 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">{{config.PROJECT_NAME}}</h1>
       <p class="govuk-body-l">
-        {{config.PROJECT_NAME}} is an independent service that helps you report negative or harmful things online to the right places. 
+        An independent service that helps you report negative or harmful things online to the right places. 
       </p>
-      <p class="govuk-body">Use this service to:</p>
+      <p class="govuk-body">You can use it to:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>Understand your rights</li>
-        <li>Report something you have experienced online to a company</li>
-        <li>Notify government regulators</li>
+        <li>Report something you have experienced online to the company responsible</li>
+        <li>Notify charities and government regulators</li>
         <li>Help others stay safe online</li>
       </ul>
       <p class="govuk-body">It takes about 5 minutes.</p>
       {{govukButton({"text": "Start now", "href": url_for('what'), "isStartButton": True})|safe}} 
-
-      <h2 class="govuk-heading-m">How it works</h2>
-      <p class="govuk-body">
-      <strong>{{config.PROJECT_NAME}}</strong> is an independent service for reporting negative or harmful things online, such as harassment on social media, upsetting images or scams.
-      </p>
-      <p class="govuk-body">
-        We'll explain your rights using information from experts, then help you report your issue to the company responsible as well as other organisations who might be able to help you.
-      </p>
-      
       <div class="govuk-warning-text">
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
         <strong class="govuk-warning-text__text">
@@ -33,6 +24,17 @@
           If you, or someone else, is in immediate danger call the police on 999
         </strong>
       </div>
+      <h2 class="govuk-heading-m">How it works</h2>
+      <p class="govuk-body">
+      <strong>{{config.PROJECT_NAME}}</strong> is an independent service for reporting negative or harmful things online, such as harassment on social media, upsetting images or scams.
+      </p>
+      <p class="govuk-body">
+        We'll explain your rights using information written by experts from different charities and support groups.
+      </p>
+      <p class="govuk-body">
+        Then we'll guide you through the process of reporting your issue to the company responsible. You can also report it to charities and support groups to help them spot new risks online.
+      </p>
+      
     </div>
   </div>
 

@@ -117,10 +117,10 @@ class govukFileField(FileField):
 
 
 class What(FlaskForm):
-    type = govukRadioField("What does your problem relate to?", [validators.Required(message="You need to choose an option")], hint="Choose the option that best describes your problem. If you are unsure, please choose \"other\"", choices=[])
+    type = govukRadioField("What best describes the issue you are reporting?", [validators.Required(message="You need to choose an option")], hint="Choose the option that best describes your problem. If you are unsure, please choose \"other\".", choices=[])
 
 class Harm(FlaskForm):
-    harm = govukRadioField("What happened?", [validators.Required(message="You need to choose an option")], hint="Choose the option that best describes your problem. If you are unsure, please \"choose other\"", choices=[("foo", "foo"), ("bar", "bar")])
+    harm = govukRadioField("What did you witness?", [validators.Required(message="You need to choose an option")], hint="Choose the option that best describes your problem. If you are unsure, please \"choose other\".", choices=[("foo", "foo"), ("bar", "bar")])
 
 
 class Service(FlaskForm):
@@ -136,7 +136,7 @@ class Who(FlaskForm):
             option_hints={
                 "reporter": {"text": "It is something that affected you directly"}, 
                 "another": {"text": "For example, a friend, colleague or family member"}, 
-                "everyone": {"text": "It has not affected a particular person, but is of general concern"}}
+                "everyone": {"text": "It has not affected your or someone you know, but is of general concern"}}
             )
 
 class Escalate(FlaskForm):
