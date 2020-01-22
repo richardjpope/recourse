@@ -1,13 +1,13 @@
 title: Misleading adverts
-description: for example, it makes a false claim 
+description: for example you've seen an advert that has made a false claim
 categories:
-    - Something I've seen online
-    - An app or website
+  - Something I've seen online
 report to:
-    - company
-    - asa
+  - company
+  - asa
 rights: |
-    This is some **markdown**
-
+  If you've seen a misleading advert, it's important that you report it to the [ASA](https://www.asa.org.uk/make-a-complaint.html).
 support: |
-    fd
+  * If you feel cheated by an advert online ... 
+  * Is
+  * A list with a [link](http://example.org)
