@@ -1,4 +1,4 @@
-from flask.ext.script import Manager, prompt_bool
+from flask_script import Manager, prompt_bool
 from recourse import app, models
 from mongoengine import connect, DoesNotExist
 from slugify import slugify

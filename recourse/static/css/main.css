@@ -4277,9 +4277,29 @@
       width: 25% !important; } }
 
 .govuk-header {
-  background: #0e3249; }
+  background: #0e3249;
+  padding-bottom: 15px;
+  border-bottom: none; }
 
+@media (min-width: 48.0625em) {
+  .govuk-header__logo {
+    width: 50%; } }
 .govuk-header__container {
   border-bottom: none; }
+
+.govuk-panel.govuk-panel--confirmation {
+  background: #0e3249; }
+
+.govuk-tag.govuk-phase-banner__content__tag {
+  background: #49230e; }
+
+.govuk-button, .govuk-button--start {
+  background: #0e3249; }
+
+.govuk-button--start:hover .govuk-button:hover {
+  background: #49230e; }
+
+.govuk-footer {
+  border-top: none; }
 
 /*# sourceMappingURL=main.css.map */
