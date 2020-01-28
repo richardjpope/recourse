@@ -18,7 +18,6 @@ class govukRadioField(RadioField):
         error_message = None
         if field.errors:
             error_message = {"text": " ".join(field.errors).strip()}
-
         #convert choices to ones govuk understands
         for choice in field.choices:
             checked = field.data == choice[0]
@@ -98,7 +97,7 @@ class govukFileField(FileField):
        self.hint = hint
 
     def widget(self, field, **kwargs):
-
+        
         #error messages
         error_message = None
         if field.errors:
@@ -143,12 +142,12 @@ class Escalate(FlaskForm):
     pass
 
 class Details(FlaskForm):
-    description = govukTextAreaField("Describe what happened", [validators.Required()], {"text":"Please give as much information as possible"})
+    description = govukTextAreaField("Describe what happened", [validators.Required(message="Enter a description of what happened")], {"text":"Please give as much information as possible"})
     screenshot = govukFileField("Upload a screenshot (optional)", [], {"text": "e.g. of the issue you are reporting"})
     date_occured = govukTextField("When did it happen (optional)", [], {"text":"(e.g. “23/01”, “25 Jan”, or “last Monday”)"})
 
 class Outcome(FlaskForm):
-    description = govukTextAreaField("Describe what a good solution would look like to you", [validators.Required()], {"text":"Please give as much information as possible"})
+    description = govukTextAreaField("Describe what a good solution would look like to you", [validators.Required(message="Enter a description of what a good solution would look like to you")], {"text":"Please give as much information as possible"})
 
 class Contact(FlaskForm):
     name = govukTextField("Full name", [validators.Required()])

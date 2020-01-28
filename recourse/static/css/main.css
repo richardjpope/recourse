@@ -129,7 +129,7 @@
   margin: 0;
   background-color: #ffffff; }
 
-.govuk-heading-xl {
+.govuk-heading-xl, .big-number span.big-number__number {
   color: #0b0c0c;
   font-family: "GDS Transport", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -142,22 +142,22 @@
   margin-top: 0;
   margin-bottom: 30px; }
   @media print {
-    .govuk-heading-xl {
+    .govuk-heading-xl, .big-number span.big-number__number {
       color: #000000; } }
   @media print {
-    .govuk-heading-xl {
+    .govuk-heading-xl, .big-number span.big-number__number {
       font-family: sans-serif; } }
   @media (min-width: 40.0625em) {
-    .govuk-heading-xl {
+    .govuk-heading-xl, .big-number span.big-number__number {
       font-size: 48px;
       font-size: 3rem;
       line-height: 1.0416666667; } }
   @media print {
-    .govuk-heading-xl {
+    .govuk-heading-xl, .big-number span.big-number__number {
       font-size: 32pt;
       line-height: 1.15; } }
   @media (min-width: 40.0625em) {
-    .govuk-heading-xl {
+    .govuk-heading-xl, .big-number span.big-number__number {
       margin-bottom: 50px; } }
 
 .govuk-heading-l {
@@ -327,7 +327,7 @@
       font-size: 14pt;
       line-height: 1.15; } }
 
-.govuk-body-l, .govuk-body-lead {
+.govuk-body-l, .govuk-body-lead, .big-number span.big-number__quantity {
   color: #0b0c0c;
   font-family: "GDS Transport", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -339,22 +339,22 @@
   margin-top: 0;
   margin-bottom: 20px; }
   @media print {
-    .govuk-body-l, .govuk-body-lead {
+    .govuk-body-l, .govuk-body-lead, .big-number span.big-number__quantity {
       color: #000000; } }
   @media print {
-    .govuk-body-l, .govuk-body-lead {
+    .govuk-body-l, .govuk-body-lead, .big-number span.big-number__quantity {
       font-family: sans-serif; } }
   @media (min-width: 40.0625em) {
-    .govuk-body-l, .govuk-body-lead {
+    .govuk-body-l, .govuk-body-lead, .big-number span.big-number__quantity {
       font-size: 24px;
       font-size: 1.5rem;
       line-height: 1.25; } }
   @media print {
-    .govuk-body-l, .govuk-body-lead {
+    .govuk-body-l, .govuk-body-lead, .big-number span.big-number__quantity {
       font-size: 18pt;
       line-height: 1.15; } }
   @media (min-width: 40.0625em) {
-    .govuk-body-l, .govuk-body-lead {
+    .govuk-body-l, .govuk-body-lead, .big-number span.big-number__quantity {
       margin-bottom: 30px; } }
 
 .govuk-body-m, .govuk-body {
@@ -447,10 +447,10 @@
     .govuk-body-xs {
       margin-bottom: 20px; } }
 
-.govuk-body-l + .govuk-heading-l, .govuk-body-lead + .govuk-heading-l {
+.govuk-body-l + .govuk-heading-l, .govuk-body-lead + .govuk-heading-l, .big-number span.big-number__quantity + .govuk-heading-l {
   padding-top: 5px; }
   @media (min-width: 40.0625em) {
-    .govuk-body-l + .govuk-heading-l, .govuk-body-lead + .govuk-heading-l {
+    .govuk-body-l + .govuk-heading-l, .govuk-body-lead + .govuk-heading-l, .big-number span.big-number__quantity + .govuk-heading-l {
       padding-top: 10px; } }
 
 .govuk-body-m + .govuk-heading-l, .govuk-body + .govuk-heading-l,
@@ -4296,7 +4296,7 @@
 .govuk-button, .govuk-button--start {
   background: #0e3249; }
 
-.govuk-button--start:hover .govuk-button:hover {
+.govuk-button--start:hover, .govuk-button:hover {
   background: #49230e; }
 
 .govuk-footer {
@@ -4305,5 +4305,16 @@
 .govuk-warning-text {
   border-top: solid 1px #b1b4b6;
   border-bottom: solid 1px #b1b4b6; }
+
+.big-number {
+  text-align: center;
+  border: solid 1px #49230e;
+  padding: 15px; }
+  .big-number span.big-number__number {
+    margin-bottom: 15px; }
+
+.callout {
+  border: solid 2px #0e3249;
+  padding: 15px; }
 
 /*# sourceMappingURL=main.css.map */

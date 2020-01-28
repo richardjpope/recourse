@@ -7,7 +7,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="" method="post" autocomplete="off" class="callout primary">
+      <form action="" method="post" autocomplete="off">
         {{ form.csrf_token }}
         {{form.type}}
         {{govukButton({"text": "Save and continue"})|safe}}

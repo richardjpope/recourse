@@ -30,17 +30,37 @@
   background:#0e3249;
 }
 
-.govuk-button--start:hover .govuk-button:hover{
+.govuk-button--start:hover, .govuk-button:hover{
   background:#49230e;
 }
-
 
 .govuk-footer{
   border-top:none;
 }
 
-
 .govuk-warning-text {
   border-top:solid 1px #b1b4b6;
   border-bottom:solid 1px #b1b4b6;
+}
+
+@media (min-width: 48.0625em){
+  .big-number {
+  }
+}
+.big-number {
+    text-align:center;
+    border:solid 1px #49230e;
+    padding:govuk-spacing(3);
+    span.big-number__number {
+      @extend %govuk-heading-xl;
+      margin-bottom:govuk-spacing(3);
+    }
+    span.big-number__quantity {
+      @extend %govuk-body-l;
+    }
+
+}
+.callout {
+  border:solid 2px #0e3249;
+  padding:govuk-spacing(3);
 }
