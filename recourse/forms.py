@@ -156,3 +156,6 @@ class Contact(FlaskForm):
 class Review(FlaskForm):
     pass
 
+class HarmItem(FlaskForm):
+    pass
+

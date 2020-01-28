@@ -1,0 +1,15 @@
+{% from "govuk-jinja-components/button/macro.jinja" import govukButton -%}
+{% extends "base.html" %}
+{% block title %}What happened?{% endblock %}
+{% block top %}
+<a href="{{url_for("index")}}" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="" method="post" autocomplete="off">
+        {{ form.csrf_token }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

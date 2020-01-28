@@ -10,7 +10,7 @@ def index():
     return render_template('index.html')
 
 @app.route("/report/what", methods=["GET", "POST"])
-def what():
+def report_what():
 
     if not "case" in session:
         case = models.Case()
@@ -28,12 +28,12 @@ def what():
         if form.validate():
             case.category = models.Category.objects.get(slug=form.type.data)
             session["case"] = case.to_json()
-            return redirect(url_for("harm"))
+            return redirect(url_for("report_harm"))
 
-    return render_template("what.html", form=form)
+    return render_template("report/what.html", form=form)
 
 @app.route("/report/harm", methods=["GET", "POST"])
-def harm():
+def report_harm():
 
     if not "case" in session:
         return redirect(url_for('index'))
@@ -54,12 +54,12 @@ def harm():
             case.harm = models.Harm.objects.get(slug=form.harm.data)
             session["case"] = case.to_json()
             print(session["case"])
-            return redirect(url_for("service"))
+            return redirect(url_for("report_service"))
 
-    return render_template("harm.html", form=form)
+    return render_template("report/harm.html", form=form)
 
 @app.route("/report/service", methods=["GET", "POST"])
-def service():
+def report_service():
 
     if not "case" in session:
         return redirect(url_for('index'))
@@ -74,12 +74,12 @@ def service():
         if form.validate():
             case.service_name = form.service_name.data
             session["case"] = case.to_json()
-            return redirect(url_for("who"))
+            return redirect(url_for("report_who"))
 
-    return render_template('service.html', form=form)
+    return render_template('report/service.html', form=form)
 
 @app.route("/report/who", methods=["GET", "POST"])
-def who():
+def report_who():
  
     if not "case" in session:
         return redirect(url_for('index'))
@@ -94,12 +94,12 @@ def who():
         if form.validate():
             case.affected_party = form.affected_party.data
             session["case"] = case.to_json()
-            return redirect(url_for("rights"))
+            return redirect(url_for("report_rights"))
 
-    return render_template('who.html', form=form)
+    return render_template('report/who.html', form=form)
 
 @app.route("/report/rights", methods=["GET", "POST"])
-def rights():
+def report_rights():
  
     if not "case" in session:
         return redirect(url_for('index'))
@@ -113,12 +113,12 @@ def rights():
     if request.method == "POST":
         if form.validate():
             session["case"] = case.to_json()
-            return redirect(url_for("details"))
+            return redirect(url_for("report_details"))
 
-    return render_template('rights.html', form=form, case=case)
+    return render_template('report/rights.html', form=form, case=case)
 
 @app.route("/report/details", methods=["GET", "POST"])
-def details():
+def report_details():
  
     if not "case" in session:
         return redirect(url_for('index'))
@@ -134,12 +134,12 @@ def details():
         if form.validate():
             case.details_description = form.description.data
             session["case"] = case.to_json()
-            return redirect(url_for("outcome"))
+            return redirect(url_for("report_outcome"))
 
-    return render_template('details.html', form=form)
+    return render_template('report/details.html', form=form)
 
 @app.route("/report/outcome", methods=["GET", "POST"])
-def outcome():
+def report_outcome():
  
     if not "case" in session:
         return redirect(url_for('index'))
@@ -154,12 +154,12 @@ def outcome():
         if form.validate():
             case.outcome_description = form.description.data
             session["case"] = case.to_json()
-            return redirect(url_for("contact"))
+            return redirect(url_for("report_contact"))
 
-    return render_template('outcome.html', form=form)
+    return render_template('report/outcome.html', form=form)
 
 @app.route("/report/contact", methods=["GET", "POST"])
-def contact():
+def report_contact():
  
     if not "case" in session:
         return redirect(url_for('index'))
@@ -176,12 +176,12 @@ def contact():
             case.contact_name = form.name.data
             case.contact_email = form.email.data
             session["case"] = case.to_json()
-            return redirect(url_for("review"))
+            return redirect(url_for("report_review"))
 
-    return render_template('contact.html', form=form)
+    return render_template('report/contact.html', form=form)
 
 @app.route("/report/review", methods=["GET", "POST"])
-def review():
+def report_review():
  
     if not "case" in session:
         return redirect(url_for('index'))
@@ -189,17 +189,30 @@ def review():
     case = models.Case.from_json(session["case"])
     form = forms.Review(request.form)
     if request.method == "POST" and form.validate():
-        return redirect(url_for("confirmation"))
+        return redirect(url_for("report_confirmation"))
 
-    return render_template('review.html', form=form, case=case)
+    return render_template('report/review.html', form=form, case=case)
 
 @app.route("/confirmation", methods=["GET"])
-def confirmation():
+def report_confirmation():
     if not "case" in session:
        return redirect(url_for('index'))
 
     case = models.Case.from_json(session["case"])
-    return render_template("confirmation.html", case=case)
+    return render_template("report/confirmation.html", case=case)
+
+#Page per thing
+@app.route("/harms/", methods=["GET"])
+def harm_index():
+
+    harms = models.Harm.objects().order_by('title')
+    return render_template("harms/index.html", harms=harms)
+
+
+@app.route("/harms/<slug>", methods=["GET", "POST"])
+def harm_item(slug):
+    form = forms.HarmItem(request.form)
+    return render_template("harms/harm.html", form=form)
 
 @app.errorhandler(404)
 def page_not_found(e):

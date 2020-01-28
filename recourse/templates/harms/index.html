@@ -1,0 +1,18 @@
+{% from "govuk-jinja-components/button/macro.jinja" import govukButton -%}
+{% extends "base.html" %}
+{% block title %}What happened?{% endblock %}
+{% block top %}
+<a href="{{url_for("index")}}" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <dl class="govuk-list">
+        {% for harm in harms %}
+          <dt><a href="{{url_for("harm_item", slug=harm.slug)}}">{{harm.title}}</a></dt>
+          <dd>harm.description</dd>
+        {% endfor %}
+      </dl>
+    </div>
+  </div>
+{% endblock %}

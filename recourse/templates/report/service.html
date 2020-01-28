@@ -2,17 +2,20 @@
 {% extends "base.html" %}
 {% block title %}What online service or company where you using?{% endblock %}
 {% block top %}
-<a href="{{url_for("outcome")}}" class="govuk-back-link">Back</a>
+<a href="{{url_for("report_harm")}}" class="govuk-back-link">Back</a>
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Enter your contact details</h1>
+      <h1 class="govuk-heading-xl">Where did it happen?</h1>
+      <p class="govuk-body">
+        This will help us understand where to report your issue to and what your options are.
+      </p>
       <form action="" method="post" autocomplete="off">
         <div class="govuk-form-group">
           {{ form.csrf_token }}
-          {{form.name}}
-          {{form.email}}
+          {{form.service_name}}
+          {{form.url}}
         </div>
         {{govukButton({"text": "Save and continue"})|safe}}
       </form>
