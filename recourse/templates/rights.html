@@ -9,7 +9,7 @@
       </h1>
       <p class="govuk-body-l">
         You are reporting <strong>{{case.harm.title|lower}}</strong> targeted at
-        {%if case.affected_party == "you" %}
+        {%if case.affected_party == "reporter" %}
           <strong>you</strong>
         {% elif case.affected_party == "another"%}
           <strong>someone else</strong>
