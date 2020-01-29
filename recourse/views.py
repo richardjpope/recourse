@@ -214,6 +214,12 @@ def harm_item(slug):
     form = forms.HarmItem(request.form)
     return render_template("harms/harm.html", form=form)
 
+#Static pages
+@app.route("/about/documentation", methods=["GET"])
+def about_documentation():
+    return render_template("about/documentation.html")
+
+#Error pages
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404

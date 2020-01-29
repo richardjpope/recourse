@@ -1,0 +1,34 @@
+{% from "govuk-jinja-components/button/macro.jinja" import govukButton -%}
+{% extends "base.html" %}
+{% block title %}Platform documentation - {{config.PROJECT_NAME}}{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Platform documentation</h1>
+      <p class="govuk-body-l">
+        {{config.PROJECT_NAME}} is a shared platform for companies that run digital services, support organisations and regulators to help the public resolve issues they are having online.
+      </p>
+      <h2 class="govuk-heading-l">Documentation for digital services</h2>
+      <div class="govuk-body">
+        <p>Coming soon</p>
+      </div>
+      <h2 class="govuk-heading-l">Documentation for support organisations and super complainants</h2>
+      <div class="govuk-body">
+        <p>
+        The guidance on <em>{{config.PROJECT_NAME}}</em> is collaboratively  managed by support organisations with expertise in different areas.
+        </p>
+        <p>
+          Suggestions and changes to the guidance for different circumstances can be made on GitHub.
+        </p>
+        <p>
+          <a href="https://github.com/richardjpope/recourse/tree/master/data/harms">Suggest a change</a>
+        </p>
+      </div>
+      <h2 class="govuk-heading-l">Documentation for regulators</h2>
+      <div class="govuk-body">
+        <p>Coming soon</p>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
