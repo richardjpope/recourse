@@ -1,11 +1,16 @@
-title: Data breach
-description:
+title: Data Breach
+description: for example your email address was stolen from a company's database.
 categories:
   - Data, identity theft and security
 report to:
-  - company
+    - company
+    - ICO
+
 rights: |
-  Todo
- 
+      Organisations are bound by the General Data Protection Regulation (GDPR) to keep your data secure, meaning that they must take measures to prevent unlawful or unauthorised processing of your personal data. They must also protect against accidental loss, damage or destruction of your personal data.
+
+      If your data is lost and it causes you financial damage or distress, you may be able to make a claim for compensation from the organisation that lost it.
+
 support: |
-  Todo
+    * Which has created a guide to [General Data Protection Regulation (GDPR)](https://www.which.co.uk/consumer-rights/regulation/general-data-protection-regulation-gdpr/).
+    * It's likely that multiple people have been affected by the data breach, find others who are in a similar situation [here](link).
