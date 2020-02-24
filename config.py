@@ -3,7 +3,7 @@ import json
 from datetime import timedelta
 
 class Config(object):
-    PROJECT_NAME = 'Report an online harm'
+    PROJECT_NAME = 'Online Resolution Service'
     DEBUG = os.environ.get('DEBUG', False)
     PREFERRED_URL_SCHEME = os.environ.get('PREFERRED_URL_SCHEME', 'https')
     MONGODB_DB = os.environ.get('MONGODB_DB', None)

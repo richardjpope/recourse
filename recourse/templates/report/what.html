@@ -2,7 +2,9 @@
 {% extends "base.html" %}
 {% block title %}What happened?{% endblock %}
 {% block top %}
-<a href="{{url_for("index")}}" class="govuk-back-link">Back</a>
+<div class="govuk-width-container">
+  <a href="{{url_for("index")}}" class="govuk-back-link">Back</a>
+</div>
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">

@@ -2,7 +2,9 @@
 {% extends "base.html" %}
 {% block title %}More information about the issue{% endblock %}
 {% block top %}
-<a href="{{url_for("report_rights")}}" class="govuk-back-link">Back</a>
+<div class="govuk-width-container">
+  <a href="{{url_for("report_rights")}}" class="govuk-back-link">Back</a>
+</div>
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
