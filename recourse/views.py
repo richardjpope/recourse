@@ -3,6 +3,12 @@ from recourse import app
 from recourse import forms
 from recourse import models
 
+def get_obj_or_404(cls, *args, **kwargs):
+    try:
+        return cls.objects.get(*args, **kwargs)
+    except cls.DoesNotExist:
+        raise Http404
+
 @app.route("/", methods=["GET"])
 def index():
     if "case" in session:
@@ -204,15 +210,31 @@ def report_confirmation():
 #Page per thing
 @app.route("/harms/", methods=["GET"])
 def harm_index():
+    data = []
+    categories = models.Category.objects().order_by('name')
+    for category in categories:
+        harms = models.Harm.objects().filter(categories=category).order_by('title')
+        data.append({'title': category.name, 'harms': harms})
+    return render_template("harms/index.html", data=data)
 
-    harms = models.Harm.objects().order_by('title')
-    return render_template("harms/index.html", harms=harms)
-
-
-@app.route("/harms/<slug>", methods=["GET", "POST"])
+@app.route("/harms/<slug>")
 def harm_item(slug):
-    form = forms.HarmItem(request.form)
-    return render_template("harms/harm.html", form=form)
+    harm = get_obj_or_404(models.Harm, slug=slug) 
+    return render_template("harms/harm.html", harm=harm)
+
+@app.route("/harms/<slug>/report")
+def harm_report(slug):
+    if "case" in session:
+        session.pop("case")
+
+    harm = get_obj_or_404(models.Harm, slug=slug) 
+    case = models.Case()
+    case.harm = harm
+    case.category = harm.categories[0]
+    
+    session["case"] = case.to_json()
+
+    return redirect(url_for('report_service'))
 
 #Static pages
 @app.route("/about/documentation", methods=["GET"])

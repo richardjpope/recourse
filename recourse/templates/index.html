@@ -14,69 +14,17 @@
   </div>
   {% endblock %}
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <div class="govuk-warning-text">
-        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-        <strong class="govuk-warning-text__text">
-          <span class="govuk-warning-text__assistive">Warning</span>
-          If you, or someone else, is in immediate danger call the police on <span>999</span>
-        </strong>
-      </div>
-    </div>
+ <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% include '_includes/emergency.html'%}
   </div>
-  <div class="govuk-grid-row">
-    <div id="steps" class="govuk-grid-column-full">
-      <h2 class="govuk-heading-m">You can use the {{config.PROJECT_NAME}} to &hellip;</h2>
-      <ul class="govuk-grid-row govuk-list">
-        <li class="govuk-grid-column-one-third">
-          Understand your rights
-        </li>
-        <li class="govuk-grid-column-one-third">
-          Report something you have experienced online to the company responsible
-        </li>
-        <li class="govuk-grid-column-one-third">
-          Notify charities and government regulators to help others stay safe online
-        </li>
-      </ul>
-    </div>
+</div>
+<div class="govuk-grid-row">
+  <div id="steps" class="govuk-grid-column-full">
+    {% include '_includes/steps.html'%}
   </div>
+</div>
 {% endblock %}
-
 {% block bottom %}
-  <div class="outro-panel">
-    <div class="govuk-width-container">
-      <div class="govuk-main-wrapper">
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds">
-            <h2 class="govuk-heading-m">How it works</h2>
-            <p class="govuk-body">
-            The <strong>{{config.PROJECT_NAME}}</strong> is an independent service for reporting negative or harmful things online, such as harassment on social media, upsetting images or scams.
-            </p>
-            <p class="govuk-body">
-              We'll explain your rights using information written by experts from different charities and support groups.
-            </p>
-            <p class="govuk-body">
-              Then we'll guide you through the process of reporting your issue to the company responsible. You can also report it to charities and support groups to help them spot new risks online.
-            </p>
-          </div>
-
-          <div class="govuk-grid-column-one-third">
-            <div class="big-number">
-              <span class="big-number__number">456</span>
-              <span class="big-number__quantity">Reports this month</span>
-            </div>
-            <div class="big-number">
-              <span class="big-number__number">15</span>
-              <span class="big-number__quantity">Charities participating</span>
-            </div>
-            <div class="big-number">
-              <span class="big-number__number">8</span>
-              <span class="big-number__quantity">Government regulators</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  {% include '_includes/howitworks.html'%}
 {% endblock %}
