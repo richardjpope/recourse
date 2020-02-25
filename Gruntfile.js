@@ -39,7 +39,13 @@ module.exports = function(grunt) {
             dest: 'recourse/static/images',
             filter: 'isFile'
           },
-
+          {
+            expand: true,
+            cwd: 'recourse/assets/fonts',
+            src: ['**/*.css', '**/*.woff', '**/*.eot', '**/*.woff2', '**/*.ttf', '**/*.svg', '**/*.svg', '**/*.rtf'],
+            dest: 'recourse/static/fonts',
+            filter: 'isFile'
+          },
           {
             expand: true,
             cwd: 'recourse/assets/vendor/foundation-sites/dist',

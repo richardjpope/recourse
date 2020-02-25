@@ -4212,11 +4212,17 @@ p + .govuk-heading-s,
     .govuk-\!-width-one-quarter {
       width: 25% !important; } }
 
-.govuk-hint, .govuk-fieldset__legend--xl, .govuk-label, .govuk-body-l, .govuk-body-lead,
+.govuk-hint, .govuk-label, .govuk-body-l, .govuk-body-lead,
 .big-number, .govuk-warning-text__text, .govuk-button, .govuk-heading-m,
 .govuk-body-m, .govuk-body, .govuk-list, .govuk-back-link, .govuk-link, .govuk-error-message,
-.govuk-heading-xl, .big-number span.big-number__number, .govuk-body-l, .govuk-heading-l, .govuk-heading-l,
+.govuk-body-l,
 .govuk-fieldset__legend, .govuk-details, .govuk-summary-list, .govuk-panel {
+  font-family: "Affogato-Regular", sans-serif; }
+
+.govuk-fieldset__legend--xl, .govuk-heading-l, .govuk-heading-m, .govuk-heading-xl {
+  font-family: "Affogato-Mediium", sans-serif; }
+
+.govuk-header__logotype-text, .big-number span.big-number__number, .govuk-button, .govuk-button--start {
   font-family: "Hind", sans-serif; }
 
 .govuk-header {
@@ -4226,7 +4232,6 @@ p + .govuk-heading-s,
   .govuk-header a.govuk-header__link {
     color: #2d69c1; }
   .govuk-header .govuk-header__logotype-text {
-    font-family: "Hind", sans-serif;
     font-weight: bold; }
     .govuk-header .govuk-header__logotype-text span {
       font-weight: 300;
