@@ -35,7 +35,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: 'recourse/assets/images',
-            src: ['*.png', '*.jpg'],
+            src: ['*.png', '*.jpg', '*.svg'],
             dest: 'recourse/static/images',
             filter: 'isFile'
           },

@@ -3,8 +3,8 @@
 <head>
       <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0" />
       <link href="https://fonts.googleapis.com/css?family=Hind:300,400,700&display=swap" rel="stylesheet">
-      <link href="{{ url_for('static', filename='fonts/Affogato/affogato.css') }}" rel="stylesheet">      
-      <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+      <!-- <link href="{{ url_for('static', filename='fonts/Affogato/affogato.css') }}" rel="stylesheet">       -->
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}?t={{ range(1, 51) | random }}">
       <title>{% block title %}{% endblock %}</title>
     {% block head %}
     {% endblock %}
@@ -15,6 +15,9 @@
     <div class="govuk-header__container govuk-width-container">
       <div class="govuk-header__logo">
         <a href="/" class="govuk-header__link govuk-header__link--homepage">
+<!--           <span class="govuk-header__logotype">
+            <img src="{{ url_for('static', filename='images/logo.svg') }}">
+          </span> -->
           <span class="govuk-header__logotype-text">
              Online Resolution <span>Service</span>
           </span>
