@@ -23,8 +23,12 @@ def report_what():
         session["case"] = case.to_json()
 
     case = models.Case.from_json(session["case"])
+    categories = models.Category.objects().order_by('name')
     form = forms.What(request.form)
-    form.type.choices = [(category.slug, category.name) for category in models.Category.objects().order_by('name')]
+    form.type.choices = [(category.slug, category.name) for category in categories]
+    for category in categories:
+        form.type.option_hints[category.slug] = {"text": category.description}
+
 
     if request.method == "GET":
         if case.category:

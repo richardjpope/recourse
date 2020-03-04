@@ -3,6 +3,7 @@ from recourse import app
 
 class Category(Document):
     name = StringField(required=True, unique=True)
+    description = StringField(required=False)
     slug = StringField(required=True, unique=True)
 
 class Harm(Document):

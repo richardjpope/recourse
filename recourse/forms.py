@@ -116,7 +116,7 @@ class govukFileField(FileField):
 
 
 class What(FlaskForm):
-    type = govukRadioField("What best describes the issue you are reporting?", [validators.Required(message="You need to choose an option")], hint="Choose the option that best describes your problem", choices=[])
+    type = govukRadioField("What best describes the issue you want to resolve?", [validators.Required(message="You need to choose an option")], hint="Choose the option that best describes your problem", choices=[])
 
 class Harm(FlaskForm):
     harm = govukRadioField("What did you witness?", [validators.Required(message="You need to choose an option")], hint="Choose the option that best describes your problem", choices=[("foo", "foo"), ("bar", "bar")])

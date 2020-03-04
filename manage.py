@@ -73,6 +73,17 @@ def importdata():
                         pass
 
                 harm.save()
+        
+        #meta
+
+        meta_directory ="%s/data/meta/" %  os.path.dirname(os.path.abspath(__file__))
+        with open("%s/categories.yaml" % meta_directory) as f:
+            data = yaml.safe_load(f)
+            categories = models.Category.objects()
+            for category in categories:
+                category.description = data.get(category.name, None)
+                category.save()
+
 
         print("Done")
 
