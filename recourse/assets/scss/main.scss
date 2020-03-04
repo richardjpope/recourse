@@ -33,6 +33,10 @@ $secondary-colour:#e4e4e4;
   font-size:1.2rem;
 }
 
+.govuk-fieldset__legend--xl, .govuk-heading-xl {
+  margin-bottom:15px;
+}
+
 //Header
 .govuk-header {
   background:$primary-colour;
@@ -105,6 +109,11 @@ $secondary-colour:#e4e4e4;
   box-shadow:none;
 }
 
+@media (min-width: 48.0625em){
+  .govuk-button--start, .govuk-button{
+    padding:10px 25px;
+  }
+}
 .govuk-radios__label::before, .govuk-checkboxes__label::before {
   border-color:#3e7bdc;
 }
@@ -124,6 +133,7 @@ $secondary-colour:#e4e4e4;
 }
 .govuk-error-message {
   color:$warning-colour;
+  font-weight:bold;
 }
 
 .intro-panel {

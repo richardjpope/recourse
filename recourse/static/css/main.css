@@ -4230,6 +4230,9 @@ p + .govuk-heading-s,
 .govuk-body-l, .govuk-body-lead {
   font-size: 1.2rem; }
 
+.govuk-fieldset__legend--xl, .govuk-heading-xl {
+  margin-bottom: 15px; }
+
 .govuk-header {
   background: #d6e8f8;
   padding-bottom: 15px;
@@ -4281,6 +4284,9 @@ p + .govuk-heading-s,
   background: #3e7bdc;
   box-shadow: none; }
 
+@media (min-width: 48.0625em) {
+  .govuk-button--start, .govuk-button {
+    padding: 10px 25px; } }
 .govuk-radios__label::before, .govuk-checkboxes__label::before {
   border-color: #3e7bdc; }
 
@@ -4297,7 +4303,8 @@ p + .govuk-heading-s,
   border-color: #fb7e92; }
 
 .govuk-error-message {
-  color: #fb7e92; }
+  color: #fb7e92;
+  font-weight: bold; }
 
 .intro-panel {
   background-color: #d6e8f8; }

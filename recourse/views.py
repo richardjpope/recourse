@@ -60,6 +60,8 @@ def report_harm():
             form.harm.data = case.harm.slug
 
     if request.method == "POST":
+        if form.harm.data == None:
+            form.harm.data = False
         if form.validate():
             case.harm = models.Harm.objects.get(slug=form.harm.data)
             session["case"] = case.to_json()

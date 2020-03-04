@@ -11,6 +11,13 @@ class govukRadioField(RadioField):
        self.hint = hint
        self.option_hints = option_hints
 
+
+    def process_formdata(self, valuelist):
+        if valuelist == []:
+            self.data = False
+        else:
+            self.data = valuelist[0]
+
     def widget(self, field, **kwargs):
         items = []
 
@@ -18,6 +25,7 @@ class govukRadioField(RadioField):
         error_message = None
         if field.errors:
             error_message = {"text": " ".join(field.errors).strip()}
+
         #convert choices to ones govuk understands
         for choice in field.choices:
             checked = field.data == choice[0]
@@ -102,7 +110,7 @@ class govukFileField(FileField):
         error_message = None
         if field.errors:
             error_message = {"text": " ".join(field.errors).strip()}
-
+        
         #convert to parameters that govuk understands
         params = {
                     "id": field.id, 
@@ -116,10 +124,10 @@ class govukFileField(FileField):
 
 
 class What(FlaskForm):
-    type = govukRadioField("What best describes the issue you want to resolve?", [validators.Required(message="You need to choose an option")], hint="Choose the option that best describes your problem", choices=[])
+    type = govukRadioField("What type of issue do you want to resolve?", [validators.Required(message="You need to choose an option")], hint="Please choose the option that best describes the type of thing that happened. This will help us identify the specific problem you experienced.", choices=[])
 
 class Harm(FlaskForm):
-    harm = govukRadioField("What did you witness?", [validators.Required(message="You need to choose an option")], hint="Choose the option that best describes your problem", choices=[("foo", "foo"), ("bar", "bar")])
+    harm = govukRadioField("What did you experience?", [validators.Required(message="You need to choose an option")], hint="Please choose the option that best describes what happened. This will help us identify what action you can take.", choices=[("foo", "foo"), ("bar", "bar")])
 
 
 class Service(FlaskForm):
