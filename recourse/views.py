@@ -207,16 +207,80 @@ def report_contact():
 
 @app.route("/report/review", methods=["GET", "POST"])
 def report_review():
- 
+    
     if not "case" in session:
         return redirect(url_for('index'))
-
+    
     case = models.Case.from_json(session["case"])
+    summary =       {{ govukSummaryList({		       {{ govukSummaryList(summary)
+         "rows": [		
+               {		
+                 "key": {		
+                  "text": "Description of the issue"		
+                 },		
+                 "value": {		
+                   "text": case.details_description		
+                 },		
+                 "actions": {		
+                   "items": [{		
+                     "href": url_for("report_details"),		
+                     "text": "Change",                    		
+                     "visuallyHiddenText": "name"		
+                   }]		
+                 }		
+               },		
+               {		
+                 "key": {		
+                  "text": "What you would like to happen"		
+                 },		
+                 "value": {		
+                   "text": case.outcome_description		
+                 },		
+                 "actions": {		
+                   "items": [{		
+                     "href": url_for("report_outcome"),		
+                     "text": "Change",                    		
+                     "visuallyHiddenText": "name"		
+                   }]		
+                 }		
+               },		
+               {		
+                 "key": {		
+                  "text": "Name"		
+                 },		
+                 "value": {		
+                   "text": case.contact_name		
+                 },		
+                 "actions": {		
+                   "items": [{		
+                     "href": url_for("report_contact"),		
+                     "text": "Change",                    		
+                     "visuallyHiddenText": "name"		
+                   }]		
+                 }		
+               },		
+               {		
+                 "key": {		
+                  "text": "Email"		
+                 },		
+                 "value": {		
+                   "text": case.contact_email		
+                 },		
+                 "actions": {		
+                   "items": [{		
+                     "href": url_for("report_contact"),		
+                     "text": "Change",                    		
+                     "visuallyHiddenText": "name"		
+                   }]		
+                 }		
+               },]		
+           })
+    
     form = forms.Review(request.form)
     if request.method == "POST" and form.validate():
         return redirect(url_for("report_confirmation"))
 
-    return render_template('report/review.html', form=form, case=case)
+    return render_template('report/review.html', form=form, summary=summary)
 
 @app.route("/confirmation", methods=["GET"])
 def report_confirmation():
