@@ -5,10 +5,28 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Review and submit your information</h1>
+      <h1 class="govuk-heading-xl">Review information</h1>
+      <h2 class="govuk-heading-m">Information that will be sent to {{service_name}}</h2>
+      <p class="govuk-body-l">The following information will be shared with {{case.service_name}}</p>
       {{ govukSummaryList(summary)
         |safe}}
 
+      <h2 class="govuk-heading-m">Information that will be sent to support organisations</h2>
+      <p class="govuk-body">
+        To help monitor the types of problems people are having online, the following information will be sent to organsations that support people or campaign for change:
+      </p>
+      <p>
+        You reported <strong>{{case.harm.title|lower}}</strong> targeted at
+        {%if case.affected_party == "reporter" %}
+          <strong>you</strong>
+        {% elif case.affected_party == "another"%}
+          <strong>someone else</strong>
+        {% else %}
+          <strong>everybody</strong>
+        {% endif %}
+        on <strong>{{case.service_name}}</strong>.
+       
+      </p>
         <form action="" method="post" autocomplete="off">
         <div class="govuk-form-group">
           {{ form.csrf_token }}
