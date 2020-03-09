@@ -6,69 +6,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">Review and submit your information</h1>
-      {{ govukSummaryList({
-        "rows": [
-              {
-                "key": {
-                 "text": "Description of the issue"
-                },
-                "value": {
-                  "text": case.details_description
-                },
-                "actions": {
-                  "items": [{
-                    "href": url_for("report_details"),
-                    "text": "Change",                    
-                    "visuallyHiddenText": "name"
-                  }]
-                }
-              },
-              {
-                "key": {
-                 "text": "What you would like to happen"
-                },
-                "value": {
-                  "text": case.outcome_description
-                },
-                "actions": {
-                  "items": [{
-                    "href": url_for("report_outcome"),
-                    "text": "Change",                    
-                    "visuallyHiddenText": "name"
-                  }]
-                }
-              },
-              {
-                "key": {
-                 "text": "Name"
-                },
-                "value": {
-                  "text": case.contact_name
-                },
-                "actions": {
-                  "items": [{
-                    "href": url_for("report_contact"),
-                    "text": "Change",                    
-                    "visuallyHiddenText": "name"
-                  }]
-                }
-              },
-              {
-                "key": {
-                 "text": "Email"
-                },
-                "value": {
-                  "text": case.contact_email
-                },
-                "actions": {
-                  "items": [{
-                    "href": url_for("report_contact"),
-                    "text": "Change",                    
-                    "visuallyHiddenText": "name"
-                  }]
-                }
-              },]
-          })
+      {{ govukSummaryList(summary)
         |safe}}
 
         <form action="" method="post" autocomplete="off">

@@ -21,5 +21,6 @@ class Case(Document):
     affected_party = StringField()
     details_description = StringField(default="")
     outcome_description = StringField(default="")
+    impact_description = StringField(default="")
     contact_name = StringField()
     contact_email = EmailField()

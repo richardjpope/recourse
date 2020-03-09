@@ -131,9 +131,9 @@ class Harm(FlaskForm):
 
 
 class Service(FlaskForm):
-    service_name = govukTextField("Name of service or app", [validators.Required(message="Enter the name of a service, app or website")], {"text": "e.g. Facebook or Daily Mail"})
+    service_name = govukTextField("Name of website or app", [validators.Required(message="Enter the name of a service, app or website")])
 
-    url = govukTextField("or paste a URL", [])
+    url = govukTextField("URL (optional)", [])
 
 class Who(FlaskForm):
     affected_party = govukRadioField(
@@ -154,8 +154,10 @@ class Details(FlaskForm):
     screenshot = govukFileField("Upload a screenshot (optional)", [], {"text": "e.g. of the issue you are reporting"})
     date_occured = govukTextField("When did it happen (optional)", [], {"text":"(e.g. “23/01”, “25 Jan”, or “last Monday”)"})
 
-class Outcome(FlaskForm):
-    description = govukTextAreaField("Describe what a good solution would look like to you", [validators.Required(message="Enter a description of what a good solution would look like to you")], {"text":"Please give as much information as possible"})
+class ImpactOutcome(FlaskForm):
+
+    impact = govukTextAreaField("Describe what the impact was", [validators.Required(message="Enter a description of what a good solution would look like to you")], {"text":"Please give as much information as possible"})
+    outcome = govukTextAreaField("Describe what a good solution would look like to you", [validators.Required(message="Enter a description of what a good solution would look like to you")], {"text":"Please give as much information as possible"})
 
 class Contact(FlaskForm):
     name = govukTextField("Full name", [validators.Required()])

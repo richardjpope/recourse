@@ -146,29 +146,42 @@ def report_details():
         if form.validate():
             case.details_description = form.description.data
             session["case"] = case.to_json()
-            return redirect(url_for("report_outcome"))
+            return redirect(url_for("report_impact_outcome"))
 
-    return render_template('report/details.html', form=form)
+    return render_template('report/details.html', form=form, service_name = case.service_name)
 
-@app.route("/report/outcome", methods=["GET", "POST"])
-def report_outcome():
+@app.route("/report/impact-outcome", methods=["GET", "POST"])
+def report_impact_outcome():
  
     if not "case" in session:
         return redirect(url_for('index'))
 
     case = models.Case.from_json(session["case"])
-    form = forms.Outcome(request.form)
+    form = forms.ImpactOutcome(request.form)
+
+    #hide impact if reporting harm not directly related to an individual
+    if case.affected_party == "everyone":
+        form.impact.validators = []
+    #change label depending on effected party
+    impact_label_text = form.impact.label.text
+    if case.affected_party == "reporter":
+        impact_label_text += " on you"
+    elif case.affected_party == "another":
+        impact_label_text += " on the person it happened to"
+    form.impact.label.text = impact_label_text 
 
     if request.method == "GET":
-        form.description.data = case.outcome_description
-   
+        form.impact.data = case.impact_description
+        form.outcome.data = case.outcome_description
+
     if request.method == "POST":
         if form.validate():
-            case.outcome_description = form.description.data
+            case.impact_description = form.impact.data
+            case.outcome_description = form.outcome.data
             session["case"] = case.to_json()
             return redirect(url_for("report_contact"))
 
-    return render_template('report/outcome.html', form=form)
+    return render_template('report/impact_outcome.html', form=form, affected_party = case.affected_party, service_name = case.service_name)
 
 @app.route("/report/contact", methods=["GET", "POST"])
 def report_contact():
