@@ -82,12 +82,12 @@ $secondary-colour:#e4e4e4;
 
 .govuk-panel.govuk-panel--confirmation{
   background:$success-colour;
+  margin-bottom:govuk-spacing(4);
 }
 
 .govuk-tag.govuk-phase-banner__content__tag{
   background:#26a69a;
 }
-
 
 .govuk-button, .govuk-button--start, .govuk-button:visited{
   // background:#fff;
@@ -100,7 +100,7 @@ $secondary-colour:#e4e4e4;
   border-radius: 45px;
   font-weight:bolder;
   box-shadow:none;
-  padding: (govuk-spacing(2) - $govuk-border-width-form-element) govuk-spacing(2) (govuk-spacing(2) - $govuk-border-width-form-element); // s1
+  padding: (govuk-spacing(2) - $govuk-border-width-form-element) (govuk-spacing(2) + $govuk-border-width-form-element * 3) (govuk-spacing(2) - $govuk-border-width-form-element * 3); // s1
 }
 
 .govuk-button--start:hover, .govuk-button:hover{
@@ -109,11 +109,12 @@ $secondary-colour:#e4e4e4;
   box-shadow:none;
 }
 
-@media (min-width: 48.0625em){
-  .govuk-button--start, .govuk-button{
-    padding:10px 25px;
-  }
-}
+// @media (min-width: 48.0625em){
+//   .govuk-button--start, .govuk-button{
+//     padding:10px 25px;
+//   }
+// }
+
 .govuk-radios__label::before, .govuk-checkboxes__label::before {
   border-color:#3e7bdc;
 }
@@ -256,4 +257,11 @@ $secondary-colour:#e4e4e4;
   -webkit-box-align: center;
   display: box;
   box-align: center;
+}
+
+
+blockquote {
+  border-left: solid 10px $secondary-colour;
+  margin-left:0;
+  padding:govuk-spacing(3); 
 }

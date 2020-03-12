@@ -148,7 +148,7 @@ def report_details():
             session["case"] = case.to_json()
             return redirect(url_for("report_impact_outcome"))
 
-    return render_template('report/details.html', form=form, service_name = case.service_name)
+    return render_template('report/details.html', form=form, service_name=case.service_name)
 
 @app.route("/report/impact-outcome", methods=["GET", "POST"])
 def report_impact_outcome():
@@ -203,7 +203,7 @@ def report_contact():
             session["case"] = case.to_json()
             return redirect(url_for("report_review"))
 
-    return render_template('report/contact.html', form=form)
+    return render_template('report/contact.html', form=form, service_name=case.service_name)
 
 @app.route("/report/review", methods=["GET", "POST"])
 def report_review():

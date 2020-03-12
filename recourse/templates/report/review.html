@@ -6,17 +6,19 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">Review information</h1>
-      <h2 class="govuk-heading-m">Information that will be sent to {{service_name}}</h2>
-      <p class="govuk-body-l">The following information will be shared with {{case.service_name}}</p>
+      <p class="govuk-body">
+        Details of your issue will be sent to <strong>{{case.service_name}}</strong>. We will also send anonymous infomration about the type of issue to relivant charities and campaign groups. This helps them better understand the types of issues that people are experiencing online.
+      </p>
+      <p class="govuk-body">
+        Please review the infomration below and confirm you with to send it.
+      </p>
+      <h2 class="govuk-heading-m">Information that will be sent to {{case.service_name}}:</h2>
       {{ govukSummaryList(summary)
         |safe}}
 
-      <h2 class="govuk-heading-m">Information that will be sent to support organisations</h2>
-      <p class="govuk-body">
-        To help monitor the types of problems people are having online, the following information will be sent to organsations that support people or campaign for change:
-      </p>
-      <p>
-        You reported <strong>{{case.harm.title|lower}}</strong> targeted at
+      <h2 class="govuk-heading-m">Information that will be sent to support organisations:</h2>
+      <blockquote class="govuk-body">
+        Someone reported <strong>{{case.harm.title|lower}}</strong> targeted at
         {%if case.affected_party == "reporter" %}
           <strong>you</strong>
         {% elif case.affected_party == "another"%}
@@ -25,8 +27,7 @@
           <strong>everybody</strong>
         {% endif %}
         on <strong>{{case.service_name}}</strong>.
-       
-      </p>
+      </blockquote>
         <form action="" method="post" autocomplete="off">
         <div class="govuk-form-group">
           {{ form.csrf_token }}

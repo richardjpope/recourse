@@ -4263,7 +4263,8 @@ p + .govuk-heading-s,
     padding-top: 20px;
     padding-bottom: 40px; } }
 .govuk-panel.govuk-panel--confirmation {
-  background: #85A81E; }
+  background: #85A81E;
+  margin-bottom: 20px; }
 
 .govuk-tag.govuk-phase-banner__content__tag {
   background: #26a69a; }
@@ -4277,16 +4278,13 @@ p + .govuk-heading-s,
   border-radius: 45px;
   font-weight: bolder;
   box-shadow: none;
-  padding: 8px 10px 8px; }
+  padding: 8px 16px 4px; }
 
 .govuk-button--start:hover, .govuk-button:hover {
   color: #fff;
   background: #3e7bdc;
   box-shadow: none; }
 
-@media (min-width: 48.0625em) {
-  .govuk-button--start, .govuk-button {
-    padding: 10px 25px; } }
 .govuk-radios__label::before, .govuk-checkboxes__label::before {
   border-color: #3e7bdc; }
 
@@ -4388,5 +4386,10 @@ p + .govuk-heading-s,
   -webkit-box-align: center;
   display: box;
   box-align: center; }
+
+blockquote {
+  border-left: solid 10px #e4e4e4;
+  margin-left: 0;
+  padding: 15px; }
 
 /*# sourceMappingURL=main.css.map */

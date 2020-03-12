@@ -10,17 +10,18 @@
           "html": "Your reference number<br><strong>HDJ2123F</strong>"
         }) 
       |safe}}
-      <p class="govuk-body">We have sent you a confirmation email.</p>
       <h2 class="govuk-heading-m">What happens next</h2>
       <p class="govuk-body">
-      We’ve sent your application to {{case.service_name}} and ChildLine.
+        We’ve sent your application to {{case.service_name}}. They will contact you to confirm your information or to report any action they have taken.
       </p>
-      <p class="govuk-body">
-        They will contact you to confirm your information or to report any action they have taken.
+      <p>
+        We have also registered this issue with ChildLine. They will use this to help monitor the types of problems people are having online and campaign for change.
       </p>
-      <h2 class="govuk-heading-l">Additional support</h2>
+      <h2 class="govuk-heading-m">Additional support</h2>
       <div class="govuk-body">
-        {{case.harm.support_markdown|markdown}}
+        <p>
+          {{case.harm.support_markdown|markdown}}
+        </p>  
       </div>
     </div>
   </div>
