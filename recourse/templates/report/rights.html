@@ -5,7 +5,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Summary of your issue and options
+        Summary 
       </h1>
       <p class="govuk-body-l">
         You are reporting <strong>{{case.harm.title|lower}}</strong> targeted at
@@ -49,6 +49,11 @@
               <li>a response within 3 days</li>
               <li>they may request additional information</li>
             </ul>
+            {% if case.affected_party == "everyone" %}
+              <p>
+                Because this issue is not targeted directly at you or someone you know you may not get a response.
+              </p>
+            {% endif %}
             <p>
               We will also send anonymous information to support groups. They will use this to help monitor the types of problems people are having online and campaign for change. For an issue relating to {{case.harm.title|lower}} we will notify:
             </p>

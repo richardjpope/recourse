@@ -1,3 +1,4 @@
+{% from "govuk-jinja-components/phase-banner/macro.jinja" import govukPhaseBanner -%}
 <!doctype html>
 <html lang="en" class="govuk-template">
 <head>
@@ -9,7 +10,7 @@
     {% block head %}
     {% endblock %}
 </head>
-<body class="govuk-template__body">
+<body class="govuk-template__body {% block bodyclass %}{% endblock %}">
   <a href="#main-content" class="govuk-skip-link">Skip to main content</a>
   <header class="govuk-header" role="banner" data-module="govuk-header">
     <div class="govuk-header__container govuk-width-container">
@@ -26,6 +27,17 @@
     </div>
   </header>
   <main>
+    <div class="govuk-width-container">
+      {% block phaseBanner %}
+        {{ govukPhaseBanner({
+          "tag": {
+            "text": "prototype"
+          },
+          "html": 'This is a prototype – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'}) 
+        }}
+      {% endblock %}
+    </div>
+
     {% block top %}
     {% endblock %}
     <div class="govuk-width-container">
@@ -39,6 +51,7 @@
             {% endfor %}
           {% endif %}
         {% endwith %}
+
         {% block content %}{% endblock %}
 
       </div>

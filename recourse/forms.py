@@ -157,7 +157,7 @@ class Details(FlaskForm):
 class ImpactOutcome(FlaskForm):
 
     impact = govukTextAreaField("Describe what the impact was", [validators.Required(message="Enter a description of what a good solution would look like to you")], {"text":"Please give as much information as possible"})
-    outcome = govukTextAreaField("Describe what a good solution would look like to you", [validators.Required(message="Enter a description of what a good solution would look like to you")], {"text":"Please give as much information as possible"})
+    outcome = govukTextAreaField("Describe what a good solution would look like to you", [validators.Required(message="Enter a description of what a good solution would look like to you")], {"text":"This does not mean it will happen, but it will help the company understand the problem and improve its processes"})
 
 class Contact(FlaskForm):
     name = govukTextField("Full name", [validators.Required()])
