@@ -4343,7 +4343,7 @@ p + .govuk-heading-s,
     color: #fff; }
 
 .govuk-warning-text {
-  border: solid 2px #bcccdf;
+  border: solid 3px #e4e4e4;
   border-radius: 45px;
   font-weight: normal; }
   .govuk-warning-text .govuk-warning-text__icon {
@@ -4376,7 +4376,7 @@ p + .govuk-heading-s,
   .big-number {
     text-align: left; } }
 .callout {
-  border: solid 2px #0e3249;
+  background-color: #e4e4e4;
   padding: 15px; }
 
 .valign {

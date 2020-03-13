@@ -207,7 +207,7 @@ $secondary-colour:#e4e4e4;
 }
 
 .govuk-warning-text {
-  border:solid 2px #bcccdf;
+  border:solid 3px $secondary-colour;
   border-radius: 45px;
   font-weight:normal;
   .govuk-warning-text__icon{
@@ -257,7 +257,8 @@ $secondary-colour:#e4e4e4;
   }
 }
 .callout {
-  border:solid 2px #0e3249;
+  // border:solid 2px #0e3249;
+  background-color:$secondary-colour;
   padding:govuk-spacing(3);
 }
 

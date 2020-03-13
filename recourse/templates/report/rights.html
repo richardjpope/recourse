@@ -5,23 +5,28 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Summary 
-      </h1>
-      <p class="govuk-body-l">
-        You are reporting <strong>{{case.harm.title|lower}}</strong> targeted at
+        Your guide - 
+        {{case.harm.title|lower}} targeted at
         {%if case.affected_party == "reporter" %}
-          <strong>you</strong>
+          you
         {% elif case.affected_party == "another"%}
-          <strong>someone else</strong>
+          someone else
         {% else %}
-          <strong>everybody</strong>
+          everybody
         {% endif %}
-        on <strong>{{case.service_name}}</strong>.
-        This page describes your rights and options for reporting this issue. It is maintained by 3 different charities and support organistions.
+        on {{case.service_name}}
+      </h1>
+      <p class="govuk-body">
+        <em>This page guides explains your rights and options for reporting this issue. It is maintained by 3 different charities and support organistions.</em>
       </p>
-      <h2 class="govuk-heading-m">Your rights</h2>
       <div class="govuk-body">
         {{case.harm.rights_markdown|markdown}}
+      </div>
+      <h2 class="govuk-heading-m">Additional support</h2>
+      <div class="govuk-body">
+        <p>
+          {{case.harm.support_markdown|markdown}}
+        </p>  
       </div>
       <div class="govuk-warning-text">
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -30,13 +35,6 @@
           If you, or someone else, is in immediate danger call the police on 999
         </strong>
       </div>
-      <h2 class="govuk-heading-m">Additional support</h2>
-      <div class="govuk-body">
-        <p>
-          {{case.harm.support_markdown|markdown}}
-        </p>  
-      </div>
-
       <form action="" method="post" autocomplete="off" class="callout">
       <h2 class="govuk-heading-l">Reporting your issue</h2>
         <div class="govuk-form-group">
