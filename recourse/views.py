@@ -342,6 +342,10 @@ def harm_report(slug):
 def about_documentation():
     return render_template("about/documentation.html")
 
+@app.route("/about/prototype", methods=["GET"])
+def about_prototype():
+    return render_template("about/prototype.html")
+
 #Error pages
 @app.errorhandler(404)
 def page_not_found(e):
@@ -350,4 +354,3 @@ def page_not_found(e):
 @app.errorhandler(500)
 def page_not_found(e):
     return render_template('500.html'), 500
-

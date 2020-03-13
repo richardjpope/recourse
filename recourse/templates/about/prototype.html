@@ -1,0 +1,12 @@
+{% from "govuk-jinja-components/button/macro.jinja" import govukButton -%}
+{% extends "base.html" %}
+{% block title %}{{config.PROJECT_NAME}}{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">This is a prototype</h1>
+      <p class="govuk-body">The {{config.PROJECT_NAME}} is a prototype service. It can not be used to submit issues (yet).</p>
+    </div>
+  </div>
+
+{% endblock %}
