@@ -12,11 +12,11 @@
       <p class="govuk-body">
         Please review the infomration below and confirm you with to send it.
       </p>
-      <h2 class="govuk-heading-m">Information that will be sent to {{case.service_name}}:</h2>
+      <h2 class="govuk-heading-l">1. Information that will be sent to {{case.service_name}}</h2>
       {{ govukSummaryList(summary)
         |safe}}
 
-      <h2 class="govuk-heading-m">Information that will be sent to support organisations:</h2>
+      <h2 class="govuk-heading-l">2. Information that will be sent to support organisations</h2>
       <blockquote class="govuk-body">
         Someone reported <strong>{{case.harm.title|lower}}</strong> targeted at
         {%if case.affected_party == "reporter" %}

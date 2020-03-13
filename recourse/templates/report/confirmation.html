@@ -17,12 +17,14 @@
       <p>
         We have also registered this issue with ChildLine. They will use this to help monitor the types of problems people are having online and campaign for change.
       </p>
-      <h2 class="govuk-heading-m">Additional support</h2>
-      <div class="govuk-body">
-        <p>
-          {{case.harm.support_markdown|markdown}}
-        </p>  
-      </div>
+      {% if case.harm.support_markdown %}
+        <h2 class="govuk-heading-m">Additional support</h2>
+        <div class="govuk-body">
+          <p>
+            {{case.harm.support_markdown|markdown}}
+          </p>  
+        </div>
+      {% endif %}
     </div>
   </div>
 {% endblock %}
