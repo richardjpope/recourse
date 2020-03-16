@@ -135,6 +135,9 @@ class Service(FlaskForm):
 
     url = govukTextField("URL (optional)", [])
 
+class ServiceConfirm(FlaskForm):
+    pass
+
 class Who(FlaskForm):
     affected_party = govukRadioField(
             "Who did it affect?", 
@@ -143,7 +146,7 @@ class Who(FlaskForm):
             option_hints={
                 "reporter": {"text": "It is something that affected you directly"}, 
                 "another": {"text": "For example, a friend, colleague or family member"}, 
-                "everyone": {"text": "It has not affected your or someone you know, but is of general concern"}}
+                "everyone": {"text": "It has not affected you or someone you know, but is of general concern"}}
             )
 
 class Escalate(FlaskForm):

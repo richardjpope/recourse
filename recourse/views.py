@@ -86,9 +86,28 @@ def report_service():
         if form.validate():
             case.service_name = form.service_name.data
             session["case"] = case.to_json()
-            return redirect(url_for("report_who"))
+            if case.service_name.lower() == "msgr":
+                return redirect(url_for("report_service_confirm"))
+            else:
+                return redirect(url_for("report_who"))
 
     return render_template('report/service.html', form=form)
+
+@app.route("/report/service-confirm", methods=["GET", "POST"])
+def report_service_confirm():
+
+    if not "case" in session:
+        return redirect(url_for('index'))
+
+    case = models.Case.from_json(session["case"])
+    form = forms.ServiceConfirm(request.form)
+
+    if request.method == "POST":
+        if form.validate():
+            session["case"] = case.to_json()
+            return redirect(url_for("report_who"))
+
+    return render_template('report/service_confirm.html', form=form)
 
 @app.route("/report/who", methods=["GET", "POST"])
 def report_who():
