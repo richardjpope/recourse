@@ -357,9 +357,13 @@ def harm_report(slug):
     return redirect(url_for('report_service'))
 
 #Static pages
-@app.route("/about/documentation", methods=["GET"])
-def about_documentation():
-    return render_template("about/documentation.html")
+@app.route("/about/companies", methods=["GET"])
+def about_companies():
+    return render_template("about/companies.html")
+
+@app.route("/about/support-organisations", methods=["GET"])
+def about_support_organisations():
+    return render_template("about/about_support_organisations.html")
 
 @app.route("/about/prototype", methods=["GET"])
 def about_prototype():
