@@ -10,6 +10,7 @@ class Harm(Document):
     title = StringField(required=True, unique=True)
     slug = StringField(required=True, unique=True)
     categories = ListField(ReferenceField(Category))
+    support_groups = ListField(StringField())
     description = StringField()
     rights_markdown = StringField()
     support_markdown = StringField()

@@ -72,10 +72,18 @@ def importdata():
                     except DoesNotExist:
                         pass
 
+                try:
+                    for item in data["report to"]:
+                        try:
+                            harm.support_groups.append(item)
+                        except DoesNotExist:
+                            pass
+                except TypeError:
+                    pass
+
                 harm.save()
         
         #meta
-
         meta_directory ="%s/data/meta/" %  os.path.dirname(os.path.abspath(__file__))
         with open("%s/categories.yaml" % meta_directory) as f:
             data = yaml.safe_load(f)

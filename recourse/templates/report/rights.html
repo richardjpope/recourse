@@ -59,11 +59,13 @@
               </p>
             {% endif %}
             <p>
-              We will also send anonymous information to support groups. They will use this to help monitor the types of problems people are having online and campaign for change. For an issue relating to {{case.harm.title|lower}} we will notify:
+              We will also send anonymous statistics to support groups. They will use this to help monitor the types of problems people are having online and campaign for change. For an issue relating to {{case.harm.title|lower}} we will notify:
             </p>
             <ul>
-              <li>ChildLine</li>
-              <li>NSPCC</li>
+              <li>Citizens Advice</li>
+              {% for group in  case.harm.support_groups %}
+                <li>{{group}}</li>
+              {% endfor %}
             </ul>
           </div>
           {{govukButton({"text": "Report this issue"})|safe}}
