@@ -3,6 +3,5 @@ description: e.g. you've seen that a child is able to access an age restricted w
 categories:
     - How an app or website works
 report to:
-    - company
-rights: |
-support: |
+rights:
+support:

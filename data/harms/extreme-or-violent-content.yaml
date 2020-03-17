@@ -3,6 +3,5 @@ description: e.g. articles, images, speeches or videos that promote violence or 
 categories:
     - Something I've seen online
 report to:
-    - company
-rights: |
-support: |
+rights:
+support:

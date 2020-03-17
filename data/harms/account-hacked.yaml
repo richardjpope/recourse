@@ -3,9 +3,5 @@ description: e.g. someone has accessed your account without your permission
 categories:
   - Data, identity theft and security
 report to:
-  - company
-rights: |
-  Todo
- 
-support: |
-  Todo
+rights:
+support:

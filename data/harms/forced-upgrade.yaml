@@ -3,9 +3,5 @@ description: e.g. a program stops working unless you upgrade to a new operating 
 categories:
   - How an app or website works
 report to:
-  - company
-rights: |
-  Todo
- 
-support: |
-  Todo
+rights:
+support:

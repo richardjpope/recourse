@@ -3,9 +3,5 @@ description: e.g. you've recieved a fake email from someone pretending to be som
 categories:
   - An online scam
 report to:
-  - company
-rights: |
-  Todo
- 
-support: |
-  Todo
+rights:
+support:

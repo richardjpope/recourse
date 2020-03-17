@@ -3,6 +3,5 @@ description: e.g. you've seen an image, video or post which shows a child being 
 categories:
     - Something I've seen online
 report to:
-    - company
-rights: |
-support: |
+rights:
+support:

@@ -20,14 +20,20 @@
         <em>This guide explains your rights and options for reporting this issue. It is maintained by 3 different charities and support organistions.</em>
       </p>
       <div class="govuk-body">
-        {{case.harm.rights_markdown|markdown}}
+        {% if case.harm.rights_markdown %}
+          {{case.harm.rights_markdown|markdown}}
+        {% else %}
+          <strong>Please note:</strong> this content has not yet been added to the prototype.
+        {% endif %}
       </div>
-      <h2 class="govuk-heading-m">Additional support</h2>
-      <div class="govuk-body">
-        <p>
-          {{case.harm.support_markdown|markdown}}
-        </p>  
-      </div>
+      {% if case.harm.support_markdown %}
+        <h2 class="govuk-heading-m">Additional support</h2>
+        <div class="govuk-body">
+          <p>
+            {{case.harm.support_markdown|markdown}}
+          </p>  
+        </div>
+      {% endif %}
       <div class="govuk-warning-text">
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
         <strong class="govuk-warning-text__text">
