@@ -1,0 +1,26 @@
+{% from "govuk-jinja-components/button/macro.jinja" import govukButton -%}
+{% extends "base.html" %}
+{% block title %}Platform documentation - {{config.PROJECT_NAME}}{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Information for companies</h1>
+      <p class="govuk-body-l">
+        The {{config.PROJECT_NAME}} helps companies that operate digital services more easily meet the requirements of the government's upcoming <a href="https://www.gov.uk/government/consultations/online-harms-white-paper">online harms legislation</a>, while still focusing on meeting the needs of your users.
+      </p>
+
+      <h2 class="govuk-heading-m">CRM integration</h2>
+      <p class="govuk-body">
+        The {{config.PROJECT_NAME}}'s <a href="{{url_for('about_prototype')}}">API</a> means you can integrate issues raised by your users on the {{config.PROJECT_NAME}} directly into your CRM.
+      </p>
+      <h2 class="govuk-heading-m">Customise information gather</h2>
+      <p class="govuk-body">
+        By integrating directly with the {{config.PROJECT_NAME}}, you can customise the types of information collected to, for example, requesting a screen name.
+      </p>
+      <h2 class="govuk-heading-m">Better statistics</h2>
+      <p class="govuk-body">
+        We flag duplicates and categorise each report so you can prioritise which issues to deal with and understand trends. Because we follow up each case, you'll also get better data about if your users feel their issues are being resolved.
+      </p>
+    </div>
+  </div>
+{% endblock %}

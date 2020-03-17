@@ -1,0 +1,21 @@
+{% from "govuk-jinja-components/button/macro.jinja" import govukButton -%}
+{% extends "base.html" %}
+{% block title %}Platform documentation - {{config.PROJECT_NAME}}{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Information for charities and support groups</h1>
+      <p class="govuk-body-l">
+        The {{config.PROJECT_NAME}} helps charities and support groups meet the needs of the public using a shared platform. It also provides better data to organisations listed as 'super complainants' under the government's proposed <a href="https://www.gov.uk/government/consultations/online-harms-white-paper">online harms legislation</a>.
+
+      <h2 class="govuk-heading-m">Collaborativly written guidance</h2>
+      <p class="govuk-body">
+        
+      </p>
+      <h2 class="govuk-heading-m">Better data</h2>
+      <p class="govuk-body">
+                
+      </p>
+    </div>
+  </div>
+{% endblock %}
