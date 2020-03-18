@@ -13,14 +13,14 @@ $secondary-colour:#e4e4e4;
 .govuk-hint, .govuk-label, .govuk-body-l, .govuk-body-lead,
   .big-number, .govuk-warning-text__text, .govuk-button, .govuk-heading-m,
   .govuk-body-m, .govuk-body, .govuk-list, .govuk-back-link, .govuk-link, .govuk-error-message,
-  .govuk-body-l,
+  .govuk-body-l, 
   .govuk-fieldset__legend, .govuk-details, .govuk-summary-list, .govuk-panel
 {
   font-family:"Hind", sans-serif;
   font-weight:400;
 }
 
-.govuk-fieldset__legend--xl, .govuk-heading-l, .govuk-heading-m, .govuk-heading-xl {
+.govuk-fieldset__legend--xl, .govuk-heading-l, .govuk-heading-m, .govuk-heading-xl, .govuk-heading-m {
   font-family:"Hind", sans-serif;
   font-weight:700;
 }
@@ -185,6 +185,8 @@ $secondary-colour:#e4e4e4;
     padding-top:200px;
     text-align:center;
     @extend %govuk-heading-m;
+    font-family:"Hind", sans-serif;
+    font-weight:700;
   }
   ul{
     :nth-child(1) {
