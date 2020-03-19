@@ -4331,7 +4331,7 @@ p + .govuk-heading-s,
   padding-top: 200px;
   text-align: center;
   font-family: "Hind", sans-serif;
-  font-weight: 700; }
+  font-weight: 400; }
 #steps ul :nth-child(1) {
   background-image: url("../images/step1.png"); }
 #steps ul :nth-child(2) {
