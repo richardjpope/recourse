@@ -31,9 +31,9 @@
       {% block phaseBanner %}
         {{ govukPhaseBanner({
           "tag": {
-            "text": "prototype"
+            "html": "<a href=\"/about/prototype\">prototype</a>"
           },
-          "html": 'This is a prototype – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'}) 
+          "html": '<a href="/about/prototype">This is only a prototype – you <strong>can not</strong> use it to report real issues</a>'}) 
         }}
       {% endblock %}
     </div>

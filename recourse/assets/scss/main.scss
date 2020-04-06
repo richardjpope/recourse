@@ -6,6 +6,7 @@ $warning-colour:#fb7e92;
 $success-colour:#85A81E;
 $primary-colour:#d6e8f8;
 $secondary-colour:#e4e4e4;
+$prototype-colour:#39ff14;
 
 @import "govuk/all";
 
@@ -88,7 +89,19 @@ $secondary-colour:#e4e4e4;
 }
 
 .govuk-tag.govuk-phase-banner__content__tag{
-  background:$success-colour;
+  background:$prototype-colour;
+  color:#333;
+  a {
+    text-decoration:none;
+    color:333;
+  }
+}
+
+.govuk-phase-banner__text {
+  .govuk-link, a, .govuk-link:visited, a:visited {
+    text-decoration:none;
+    color:#000!important;
+  }
 }
 
 .govuk-button, .govuk-button--start, .govuk-button:visited{
@@ -286,4 +299,20 @@ blockquote {
   text-align: center;
   padding-top:govuk-spacing(3); 
   margin-bottom:govuk-spacing(3); 
+}
+
+.prototype-panel{
+  background:$prototype-colour;
+  padding:govuk-spacing(4);
+  margin:govuk-spacing(2);
+  border:dotted 1px #333;
+  outline:solid 15px $prototype-colour;
+  h1  {
+    text-transform:uppercase;
+    font-family: Arial, sans-serif;
+    outline:2px solid transparent;
+    outline-offset:-2px;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
 }

@@ -4,8 +4,16 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">This is a prototype</h1>
-      <p class="govuk-body">The {{config.PROJECT_NAME}} is a prototype service. It can not be used to submit issues (yet).</p>
+      <div class="prototype-panel">
+      	<h1 class="govuk-heading-m">Prototype</h1>
+      	<div class="govuk-body">
+	      	<p>The <strong>{{config.PROJECT_NAME}}</strong> is a prototype. It <strong>can not</strong> be used to report real issues. Some pages and features are incomplete or missing.
+	      	</p>
+	      	<p>
+	      		It was created by Doteveryone and Resolver to show how a shared platform for resolving online harms could work.
+	      	</p>
+	     </div>
+      </div>
     </div>
   </div>
 {% endblock %}

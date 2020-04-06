@@ -1,4 +1,5 @@
 {% from "govuk-jinja-components/button/macro.jinja" import govukButton -%}
+{% from "govuk-jinja-components/phase-banner/macro.jinja" import govukPhaseBanner -%}
 {% extends "base.html" %}
 {% block title %}{{config.PROJECT_NAME}}{% endblock %}
 {% block bodyclass %}landing{% endblock %}
@@ -16,7 +17,6 @@
   </div>
   {% endblock %}
 {% block content %}
-
  <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     {% include '_includes/emergency.html'%}
