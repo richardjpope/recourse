@@ -9,7 +9,7 @@ import os
 app = Flask(__name__)
 app.config.from_object(os.environ['SETTINGS'])
 db = MongoEngine(app)
-basic_auth = BasicAuth(app)
+# basic_auth = BasicAuth(app)
 Markdown(app)
 
 #Templates
