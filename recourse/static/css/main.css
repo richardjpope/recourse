@@ -4208,6 +4208,9 @@ p + .govuk-heading-s,
     .govuk-\!-width-one-quarter {
       width: 25% !important; } }
 
+html.govuk-template {
+  background: #fff; }
+
 .govuk-hint, .govuk-label, .govuk-body-l, .govuk-body-lead,
 .big-number, .govuk-warning-text__text, .govuk-button, .govuk-heading-m,
 .govuk-body-m, .govuk-body, .govuk-list, .govuk-back-link, .govuk-link, .govuk-error-message,
@@ -4410,17 +4413,22 @@ blockquote {
   margin-bottom: 15px; }
 
 .prototype-panel {
-  background: #39ff14;
   padding: 20px;
-  margin: 10px;
-  border: dotted 1px #333;
-  outline: solid 15px #39ff14; }
+  margin: 10px; }
   .prototype-panel h1 {
+    padding: 0 20px;
+    background: #39ff14;
+    display: inline-block;
     text-transform: uppercase;
     font-family: Arial, sans-serif;
     outline: 2px solid transparent;
     outline-offset: -2px;
     letter-spacing: 1px;
     font-weight: 700; }
+
+.prototype-nocontent {
+  border: dashed #39ff14 2px;
+  padding: 50px 0;
+  text-align: center; }
 
 /*# sourceMappingURL=main.css.map */

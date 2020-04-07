@@ -23,7 +23,9 @@
         {% if case.harm.rights_markdown %}
           {{case.harm.rights_markdown|markdown}}
         {% else %}
-          <strong>Please note:</strong> this content has not yet been added to the prototype.
+          <div class="prototype-nocontent">
+            <strong>Please note:</strong> this content has not yet been added to the prototype.
+          </div>
         {% endif %}
       </div>
       {% if case.harm.support_markdown %}

@@ -10,6 +10,10 @@ $prototype-colour:#39ff14;
 
 @import "govuk/all";
 
+html.govuk-template {
+  background:#fff;
+}
+
 //Type
 .govuk-hint, .govuk-label, .govuk-body-l, .govuk-body-lead,
   .big-number, .govuk-warning-text__text, .govuk-button, .govuk-heading-m,
@@ -288,7 +292,6 @@ $prototype-colour:#39ff14;
   box-align: center;
 }
 
-
 blockquote {
   border-left: solid 10px $secondary-colour;
   margin-left:0;
@@ -302,12 +305,12 @@ blockquote {
 }
 
 .prototype-panel{
-  background:$prototype-colour;
   padding:govuk-spacing(4);
   margin:govuk-spacing(2);
-  border:dotted 1px #333;
-  outline:solid 15px $prototype-colour;
   h1  {
+    padding:0 govuk-spacing(4);
+    background:$prototype-colour;
+    display:inline-block;
     text-transform:uppercase;
     font-family: Arial, sans-serif;
     outline:2px solid transparent;
@@ -315,4 +318,10 @@ blockquote {
     letter-spacing: 1px;
     font-weight: 700;
   }
+}
+
+.prototype-nocontent{
+  border:dashed $prototype-colour 2px;
+  padding:govuk-spacing(8) 0;
+  text-align:center;
 }

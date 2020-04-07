@@ -1,0 +1,60 @@
+{% from "govuk-jinja-components/button/macro.jinja" import govukButton -%}
+<!doctype html>
+<html lang="en" class="govuk-template">
+<head>
+      <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0" />
+      <link href="https://fonts.googleapis.com/css?family=Hind:300,400,700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}?t={{ range(1, 51) | random }}">
+      <title>{% block title %}{% endblock %}</title>
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+  <a href="#main-content" class="govuk-skip-link">Skip to main content</a>
+  <main>
+    <div class="govuk-width-container">
+      <div class="govuk-main-wrapper">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <div class="prototype-panel">
+                <h1 class="govuk-heading-m">Prototype</h1>
+                <div class="govuk-body">
+                  <p>The <strong>{{config.PROJECT_NAME}}</strong> is a prototype. It <strong>can not</strong> be used to report real issues. Some pages and features are incomplete or missing.
+                  </p>
+                  <p>
+                    It was created by <a href="https://www.doteveryone.org.uk">Doteveryone</a> and <a href="https://www.resolver.co.uk">Resolver</a> to show how a shared platform for resolving online harms could work.
+                  </p>
+                  <p>
+                    The {{config.PROJECT_NAME}} would allow charities, support groups and digital companies to work together to provide the best support for people who have been exposed to harm online.
+                  </p>
+                  <p class="govuk-body-l">
+                    <strong><a href="{{url_for('index')}}">Access the prototype</a></strong>
+                  </p>
+                  <h3>More about the project</h3>
+                  <ul>
+                    <li>
+                      <a href="https://www.doteveryone.org.uk/2020/04/to-make-tech-accountable-for-online-harms-we-need-to-harness-each-part-of-the-system/">To make tech accountable for online harms we need to harness each part of the system</a>
+                    </li>
+                    <li>
+                      <a href="https://www.doteveryone.org.uk/2020/01/uncovering-what-people-need-to-seek-redress-in-an-online-world/">Uncovering what people need to seek redress in an online world</a>
+                    </li>
+                    <li>
+                      <a href="https://www.doteveryone.org.uk/2019/09/doteveryones-made-the-legal-access-challenge-final-🎉/">Doteveryone’s made the Legal Access Challenge final!</a>
+                    </li>
+                    <li>
+                      <a href="https://www.doteveryone.org.uk/2019/07/doteveryones-response-to-the-online-harms-white-paper/">Doteveryone’s response to the Online Harms White Paper</a>
+                    </li>
+                    <li>
+                      <a href="https://www.doteveryone.org.uk/2019/02/what-does-good-redress-look-like/">What does good redress look like?</a>
+                    </li>
+                  </ul>
+               </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </main>
+  <script src="{{ url_for('static', filename='vendor/govuk-frontend/govuk-frontend-3.4.0.min.js') }}"></script>
+  <script>window.GOVUKFrontend.initAll()</script>
+</body>

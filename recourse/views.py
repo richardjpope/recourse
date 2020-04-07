@@ -10,6 +10,10 @@ def get_obj_or_404(cls, *args, **kwargs):
         raise Http404
 
 @app.route("/", methods=["GET"])
+def landing():
+    return render_template('landing.html')
+
+@app.route("/start", methods=["GET"])
 def index():
     if "case" in session:
         session.pop("case")
@@ -357,6 +361,10 @@ def harm_report(slug):
     return redirect(url_for('report_service'))
 
 #Static pages
+@app.route("/robots.txt", methods=["GET"])
+def robots():
+    return render_template("robots.txt")
+
 @app.route("/about/companies", methods=["GET"])
 def about_companies():
     return render_template("about/companies.html")
