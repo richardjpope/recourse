@@ -17,6 +17,7 @@ class Config(object):
     BASIC_AUTH_USERNAME = os.environ.get('BASIC_AUTH_USERNAME', None)
     BASIC_AUTH_PASSWORD = os.environ.get('BASIC_AUTH_PASSWORD', None)
   
+  
 class DevelopmentConfig(Config):
     DEBUG = True
     MONGODB_DB = os.environ.get('MONGODB_DB', 'recourse_dev')
