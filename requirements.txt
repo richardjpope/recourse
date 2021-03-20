@@ -8,7 +8,7 @@ Flask-WTF==0.14
 -e git+https://github.com/richardjpope/govuk-jinja-components@929a494a555d4f6abc20d3c22d2edeb62b7ae020#egg=govuk_jinja_components
 gunicorn==20.0.4
 itsdangerous==0.24
-Jinja2==2.10.3
+Jinja2==2.11.3
 Markdown==2.6.6
 MarkupSafe==1.1.1
 mongoengine==0.10.6
